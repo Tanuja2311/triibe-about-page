@@ -1,5 +1,5 @@
-import { Linkedin } from "lucide-react";
 import PersonAvatar from "./PersonAvatar";
+import { LinkedInBadge } from "./LinkedInBadge";
 import type { Department } from "../types/about";
 
 function MemberChip({
@@ -17,17 +17,7 @@ function MemberChip({
       <p className="text-[10px] text-[#111111] font-medium text-center leading-tight w-full break-words">
         {name}
       </p>
-      {linkedIn && (
-        <a
-          href={linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#0A66C2] hover:text-[#004182] transition-colors"
-          aria-label={`${name} on LinkedIn`}
-        >
-          <Linkedin size={10} />
-        </a>
-      )}
+      <LinkedInBadge url={linkedIn} />
     </div>
   );
 }

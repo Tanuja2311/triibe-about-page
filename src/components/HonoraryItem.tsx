@@ -1,5 +1,6 @@
-import { Linkedin, Instagram } from "lucide-react";
+import { Instagram } from "lucide-react";
 import PersonAvatar from "./PersonAvatar";
+import { LinkedInBadge } from "./LinkedInBadge";
 import type { HonoraryMember } from "../types/about";
 
 interface Props {
@@ -13,16 +14,18 @@ export default function HonoraryItem({ member }: Props) {
     <div className="flex flex-col items-center gap-1 text-center">
       <PersonAvatar src={member.imagePath} name={member.name} size={32} />
       <p className="text-[10px] font-medium text-[#111111] leading-tight">{member.name}</p>
-      {member.linkedIn && (
+      {isInstagram ? (
         <a
           href={member.linkedIn}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#0A66C2] hover:text-[#004182] transition-colors"
-          aria-label={`${member.name} on ${isInstagram ? "Instagram" : "LinkedIn"}`}
+          className="text-[#E1306C] hover:opacity-80 transition-opacity"
+          aria-label={`${member.name} on Instagram`}
         >
-          {isInstagram ? <Instagram size={10} /> : <Linkedin size={10} />}
+          <Instagram size={12} />
         </a>
+      ) : (
+        <LinkedInBadge url={member.linkedIn} />
       )}
     </div>
   );

@@ -1,5 +1,5 @@
-import { Linkedin } from "lucide-react";
 import PersonAvatar from "./PersonAvatar";
+import { LinkedInBadge } from "./LinkedInBadge";
 import type { Person } from "../types/about";
 
 interface Props {
@@ -17,17 +17,9 @@ export default function PersonCard({ person, photoSize }: Props) {
           {person.role}
         </span>
       )}
-      {person.linkedIn && (
-        <a
-          href={person.linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-1.5 text-xs text-[#0A66C2] hover:underline"
-        >
-          <Linkedin size={12} />
-          LinkedIn
-        </a>
-      )}
+      <div className="mt-3">
+        <LinkedInBadge url={person.linkedIn} />
+      </div>
     </div>
   );
 }

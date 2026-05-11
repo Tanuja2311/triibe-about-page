@@ -1,5 +1,5 @@
-import { Linkedin } from "lucide-react";
 import PersonAvatar from "./PersonAvatar";
+import { LinkedInBadge } from "./LinkedInBadge";
 import type { Person } from "../types/about";
 
 interface Props {
@@ -14,17 +14,7 @@ export default function LegacyMemberItem({ person }: Props) {
       {person.role && (
         <p className="text-[10px] text-[#2D7A4B] -mt-1">{person.role}</p>
       )}
-      {person.linkedIn && (
-        <a
-          href={person.linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#0A66C2] hover:text-[#004182] transition-colors"
-          aria-label={`${person.name} on LinkedIn`}
-        >
-          <Linkedin size={14} />
-        </a>
-      )}
+      <LinkedInBadge url={person.linkedIn} />
     </div>
   );
 }

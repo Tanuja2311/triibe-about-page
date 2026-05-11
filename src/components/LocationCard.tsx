@@ -1,5 +1,6 @@
-import { ArrowRight, Linkedin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import PersonAvatar from "./PersonAvatar";
+import { LinkedInBadge } from "./LinkedInBadge";
 import type { LocationEntry } from "../types/about";
 
 interface Props {
@@ -14,7 +15,7 @@ export default function LocationCard({ entry }: Props) {
         <p className="font-bold text-[#111111] text-sm">{entry.name}</p>
         <p className="text-xs text-gray-500 mt-0.5">{entry.location}</p>
       </div>
-      <div className="flex gap-2 flex-wrap justify-center">
+      <div className="flex gap-2 flex-wrap justify-center items-center">
         {entry.locationPath && (
           <a
             href={entry.locationPath}
@@ -23,17 +24,7 @@ export default function LocationCard({ entry }: Props) {
             View location <ArrowRight size={11} />
           </a>
         )}
-        {entry.linkedIn && (
-          <a
-            href={entry.linkedIn}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#0A66C2] text-white hover:bg-[#004182] transition-colors"
-          >
-            <Linkedin size={11} />
-            LinkedIn
-          </a>
-        )}
+        <LinkedInBadge url={entry.linkedIn} />
       </div>
     </div>
   );
