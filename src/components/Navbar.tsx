@@ -2,51 +2,57 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "https://triibe.org/" },
-  { label: "Program", href: "https://triibe.org/program" },
-  { label: "TRIIBE I00", href: "https://triibe.org/triibe100" },
-  { label: "Summit", href: "https://triibe.org/summit" },
-  { label: "TRIIBE Talk", href: "https://triibe.org/triibetalk" },
-  { label: "Media", href: "https://triibe.org/media" },
-  { label: "About us", href: "https://triibe.org/about", active: true },
+  { label: "Home", href: "https://www.triibe.org/" },
+  { label: "Program", href: "https://www.triibe.org/program" },
+  { label: "TRIIBE I00", href: "https://www.triibe.org/triibe-i00" },
+  { label: "Summit", href: "https://www.triibe.org/summit" },
+  { label: "TRIIBE Talk", href: "https://www.triibe.org/triibe-talk" },
+  { label: "Media", href: "https://www.triibe.org/media" },
+  { label: "About us", href: "#", active: true },
 ];
+
+const BG = "#0D2B1E";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <nav className="sticky top-0 z-50 w-full" style={{ backgroundColor: BG }}>
+      <div className="max-w-7xl mx-auto px-8 flex items-center h-16">
 
         {/* Logo */}
-        <a href="https://triibe.org" className="flex items-center shrink-0">
-          <img
-            src="/images/triibe-logo-black.png"
-            alt="TRIIBE"
-            style={{ height: 32, width: "auto", objectFit: "contain" }}
-          />
-        </a>
+        <div className="flex-1">
+          <a href="https://www.triibe.org/">
+            <img
+              src="/images/triibe-logo-black.png"
+              alt="TRIIBE"
+              style={{
+                height: 32,
+                width: "auto",
+                filter: "brightness(0) invert(1)",
+              }}
+            />
+          </a>
+        </div>
 
         {/* Desktop nav links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
-              key={link.href}
+              key={link.label}
               href={link.href}
-              className="text-[13px] font-medium transition-colors duration-200"
               style={{
-                color: link.active ? "#1A6B3C" : "#111111",
-                borderBottom: link.active
-                  ? "1px solid #1A6B3C"
-                  : "1px solid transparent",
-                paddingBottom: "2px",
+                fontSize: 14,
+                color: "#ffffff",
+                fontWeight: link.active ? 700 : 400,
+                textDecoration: "none",
+                opacity: link.active ? 1 : 0.85,
+                transition: "opacity 0.15s",
               }}
-              onMouseEnter={(e) => {
-                if (!link.active) e.currentTarget.style.color = "#1A6B3C";
-              }}
-              onMouseLeave={(e) => {
-                if (!link.active) e.currentTarget.style.color = "#111111";
-              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.opacity = link.active ? "1" : "0.85")
+              }
             >
               {link.label}
             </a>
@@ -54,101 +60,106 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="flex-1 hidden md:flex justify-end items-center gap-3">
           <a
             href="https://donate.rayzeapp.com/orgs/tIbe07j0XKkLQezHHXoz"
             target="_blank"
             rel="noopener noreferrer"
+            className="rounded-md transition-opacity hover:opacity-80"
             style={{
-              fontSize: "13px",
+              backgroundColor: "#ffffff",
+              color: BG,
+              border: "1px solid #ffffff",
+              padding: "7px 20px",
+              fontSize: 14,
               fontWeight: 600,
-              padding: "7px 18px",
-              borderRadius: "4px",
-              border: "1px solid #1A6B3C",
-              color: "#1A6B3C",
-              backgroundColor: "transparent",
-              transition: "background-color 0.2s",
+              textDecoration: "none",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor = "#EAF3DE")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = "transparent")
-            }
           >
             Donate
           </a>
           <a
-            href="https://triibe.org/apply"
+            href="https://www.triibe.org/apply"
+            className="rounded-md transition-opacity hover:opacity-80"
             style={{
-              fontSize: "13px",
+              backgroundColor: "#ffffff",
+              color: BG,
+              border: "1px solid #ffffff",
+              padding: "7px 20px",
+              fontSize: 14,
               fontWeight: 600,
-              padding: "7px 18px",
-              borderRadius: "4px",
-              backgroundColor: "#1A6B3C",
-              color: "white",
-              transition: "background-color 0.2s",
+              textDecoration: "none",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor = "#2D7A4B")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = "#1A6B3C")
-            }
           >
             Apply
           </a>
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-[#111111] p-1"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="flex-1 flex justify-end md:hidden">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-white p-1"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-6 flex flex-col gap-5">
+        <div
+          className="md:hidden border-t px-6 py-6 flex flex-col gap-5"
+          style={{ backgroundColor: BG, borderColor: "rgba(255,255,255,0.15)" }}
+        >
           {navLinks.map((link) => (
             <a
-              key={link.href}
+              key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-[13px] font-medium transition-colors"
-              style={{ color: link.active ? "#1A6B3C" : "#111111" }}
+              style={{
+                fontSize: 14,
+                color: "#ffffff",
+                fontWeight: link.active ? 700 : 400,
+                textDecoration: "none",
+              }}
             >
               {link.label}
             </a>
           ))}
-          <div className="flex gap-3 pt-3 border-t border-gray-100">
+          <div
+            className="flex gap-3 pt-3 border-t"
+            style={{ borderColor: "rgba(255,255,255,0.15)" }}
+          >
             <a
               href="https://donate.rayzeapp.com/orgs/tIbe07j0XKkLQezHHXoz"
               target="_blank"
               rel="noopener noreferrer"
+              className="rounded-md"
               style={{
-                fontSize: "13px",
+                backgroundColor: "#ffffff",
+                color: BG,
+                border: "1px solid #ffffff",
+                padding: "7px 20px",
+                fontSize: 14,
                 fontWeight: 600,
-                padding: "7px 18px",
-                borderRadius: "4px",
-                border: "1px solid #1A6B3C",
-                color: "#1A6B3C",
+                textDecoration: "none",
               }}
             >
               Donate
             </a>
             <a
-              href="https://triibe.org/apply"
+              href="https://www.triibe.org/apply"
+              className="rounded-md"
               style={{
-                fontSize: "13px",
+                backgroundColor: "#ffffff",
+                color: BG,
+                border: "1px solid #ffffff",
+                padding: "7px 20px",
+                fontSize: 14,
                 fontWeight: 600,
-                padding: "7px 18px",
-                borderRadius: "4px",
-                backgroundColor: "#1A6B3C",
-                color: "white",
+                textDecoration: "none",
               }}
             >
               Apply

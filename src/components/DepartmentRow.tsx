@@ -12,9 +12,30 @@ function MemberChip({
   linkedIn?: string;
 }) {
   return (
-    <div className="flex flex-col items-center gap-1 w-16">
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 4,
+        width: 110,
+        minWidth: 110,
+        maxWidth: 110,
+      }}
+    >
       <PersonAvatar src={imagePath} name={name} size={40} />
-      <p className="text-[10px] text-[#111111] font-medium text-center leading-tight w-full break-words">
+      <p
+        style={{
+          fontSize: 11,
+          color: "#111111",
+          fontWeight: 500,
+          textAlign: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          width: "100%",
+        }}
+      >
         {name}
       </p>
       <LinkedInBadge url={linkedIn} />
@@ -41,7 +62,17 @@ export default function DepartmentRow({ department }: Props) {
           {members.length} {members.length === 1 ? "member" : "members"}
         </p>
       </div>
-      <div className="flex-1 flex flex-wrap gap-4 p-4 items-start content-start">
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "16px 28px",
+          padding: 16,
+          alignItems: "flex-start",
+          alignContent: "flex-start",
+        }}
+      >
         {members.map((member) => (
           <MemberChip
             key={member.name}

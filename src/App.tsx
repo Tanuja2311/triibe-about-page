@@ -5,9 +5,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className="pt-16">
-        <AboutPage />
-      </div>
+      <AboutPage />
     </>
   );
 }

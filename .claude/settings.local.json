@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\Triibe\\\\About-Us-Page\" -Force)",
+      "Bash(Select-Object -Property Mode, Name)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(Get-ChildItem -Path \"D:\\\\Triibe\" -Directory)",
+      "Bash(Select-Object Name)",
+      "PowerShell(Get-ChildItem \"D:\\\\Triibe\\\\piccadilly-gala\" -Force | Where-Object {$_.PSIsContainer} | Select-Object Name)",
+      "PowerShell(Get-ChildItem \"D:\\\\Triibe\\\\triibe-globe\" -Force | Where-Object {$_.PSIsContainer} | Select-Object Name)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(gh auth *)",
+      "Bash(Get-ChildItem -Path \"D:\\\\Triibe\\\\piccadilly-gala\" -Recurse)",
+      "Bash(Select-Object FullName)",
+      "WebFetch(domain:triibe.org)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://triibe.org/images/home/header1.png\" -OutFile \"D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\triibe-logo-black.png\" -UseBasicParsing; Write-Output \"Downloaded: $\\(\\(Get-Item 'D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\triibe-logo-black.png'\\).Length\\) bytes\")",
+      "Bash(ping -n 4 127.0.0.1)"
+    ]
+  }
+}

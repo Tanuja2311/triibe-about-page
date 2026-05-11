@@ -172,7 +172,7 @@ export default function AboutPage() {
             title="Honorary Members"
             description="Changemakers who have contributed to the TRIIBE community and whose work we carry forward."
           />
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-x-4 gap-y-10">
             {honoraryMembers.map((member) => (
               <HonoraryItem key={member.name} member={member} />
             ))}
