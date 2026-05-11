@@ -1,5 +1,13 @@
+import Navbar from "./components/Navbar";
 import AboutPage from "./pages/AboutPage";
 
 export default function App() {
-  return <AboutPage />;
+  return (
+    <>
+      <Navbar />
+      <div className="pt-16">
+        <AboutPage />
+      </div>
+    </>
+  );
 }

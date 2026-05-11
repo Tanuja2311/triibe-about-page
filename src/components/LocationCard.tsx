@@ -15,12 +15,14 @@ export default function LocationCard({ entry }: Props) {
         <p className="text-xs text-gray-500 mt-0.5">{entry.location}</p>
       </div>
       <div className="flex gap-2 flex-wrap justify-center">
-        <a
-          href={entry.locationPath}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#EAF3DE] text-[#1A6B3C] border border-[#C0DD97] hover:bg-[#d4ebc4] transition-colors"
-        >
-          View location <ArrowRight size={11} />
-        </a>
+        {entry.locationPath && (
+          <a
+            href={entry.locationPath}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#EAF3DE] text-[#1A6B3C] border border-[#C0DD97] hover:bg-[#d4ebc4] transition-colors"
+          >
+            View location <ArrowRight size={11} />
+          </a>
+        )}
         {entry.linkedIn && (
           <a
             href={entry.linkedIn}

@@ -23,7 +23,7 @@ export interface Department {
 export interface LocationEntry {
   name: string;
   location: string;
-  locationPath: string;
+  locationPath?: string; // only set when the triibe.org page exists
   imagePath: string;
   linkedIn?: string;
 }

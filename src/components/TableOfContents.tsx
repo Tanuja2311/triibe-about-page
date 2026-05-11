@@ -16,8 +16,8 @@ export default function TableOfContents() {
   };
 
   return (
-    <div className="sticky top-0 z-40 bg-white border-y border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-3">
+    <div className="sticky top-16 z-40 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex flex-wrap gap-2">
           {sections.map(({ id, label, Icon }) => (
             <button

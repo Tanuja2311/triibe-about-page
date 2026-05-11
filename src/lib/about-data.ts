@@ -161,66 +161,58 @@ export const legacyBoard: Person[] = [
   { name: "Sandra Fan", imagePath: "/images/team/sandra-fan.jpg" },
 ];
 
+// locationPath is omitted until triibe.org/locations pages are live
 export const locations: LocationEntry[] = [
   {
     name: "Kyle Matthys",
     location: "United States",
-    locationPath: "/locations/united-states",
     imagePath: "/images/team/kyle-matthys.jpg",
     linkedIn: "https://www.linkedin.com/in/kylematthys/",
   },
   {
     name: "Maryam Rana",
     location: "United Kingdom (London)",
-    locationPath: "/locations/united-kingdom",
     imagePath: "/images/team/maryam-rana.jpg",
   },
   {
     name: "Satyam Pandey",
     location: "India (Ranchi)",
-    locationPath: "/locations/india",
     imagePath: "/images/team/satyam-pandey.jpg",
     linkedIn: "https://www.linkedin.com/in/satyyampandey/",
   },
   {
     name: "Laya Pothunuri",
     location: "Singapore",
-    locationPath: "/locations/singapore",
     imagePath: "/images/team/laya-pothunuri.jpg",
     linkedIn: "https://www.linkedin.com/in/laya-pothunuri-964878175/",
   },
   {
     name: "Musa Konneh",
     location: "Sierra Leone",
-    locationPath: "/locations/sierra-leone",
     imagePath: "/images/team/musa-konneh.jpg",
     linkedIn: "https://www.linkedin.com/in/musa-konneh-079673110/",
   },
   {
     name: "Jonnathan Mtonga",
     location: "Zambia",
-    locationPath: "/locations/zambia",
     imagePath: "/images/team/jonnathan-mtonga.jpg",
     linkedIn: "https://www.linkedin.com/in/jonnathanmtonga/",
   },
   {
     name: "Patience Nnedinso Eze",
     location: "Nigeria",
-    locationPath: "/locations/nigeria",
     imagePath: "/images/team/patience-nnedinso-eze.jpg",
     linkedIn: "https://www.linkedin.com/in/patience-nnedinso-eze-b25b4bb7/",
   },
   {
     name: "Ronan Hasan",
     location: "Canada",
-    locationPath: "/locations/canada",
     imagePath: "/images/team/ronan-hasan.jpg",
     linkedIn: "https://www.linkedin.com/in/ronan-hasan-4b5158241/",
   },
   {
     name: "Oshane Panton",
     location: "Jamaica",
-    locationPath: "/locations/jamaica",
     imagePath: "/images/team/oshane-panton.jpg",
     linkedIn: "https://www.linkedin.com/in/oshanepanton/",
   },
