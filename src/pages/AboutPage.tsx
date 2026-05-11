@@ -44,20 +44,19 @@ export default function AboutPage() {
     <main className="bg-white min-h-screen">
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+      <div className="max-w-6xl mx-auto px-6 py-16 lg:py-20">
         <p className="text-[#78C896] text-[11px] uppercase tracking-widest font-semibold mb-5">
           Our organizational structure
         </p>
         <h1 className="text-4xl lg:text-5xl font-bold text-[#111111] leading-tight mb-8">
           Everyone you see below is building{" "}
           <img
-            src="/images/triibe-logo.png"
+            src="/images/triibe-logo-black.png"
             alt="TRIIBE"
             className="inline-block"
             style={{
               height: "0.85em",
               verticalAlign: "middle",
-              filter: "brightness(0)",
             }}
           />
           .
@@ -88,7 +87,7 @@ export default function AboutPage() {
       <TableOfContents />
 
       {/* ── Sections ─────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* C-Suite & Board */}
         <section id="csuite" className="py-16 scroll-mt-28">
@@ -179,6 +178,7 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
+
       </div>
     </main>
   );

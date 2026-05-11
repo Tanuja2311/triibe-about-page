@@ -17,13 +17,19 @@ function initials(name: string) {
 
 export default function PersonAvatar({ src, name, size }: Props) {
   const [errored, setErrored] = useState(false);
-  const dim = { width: size, height: size, minWidth: size };
+
+  const containerStyle: React.CSSProperties = {
+    width: size,
+    height: size,
+    minWidth: size,
+    flexShrink: 0,
+  };
 
   if (errored) {
     return (
       <div
-        className="rounded-full bg-[#1A6B3C] text-white flex items-center justify-center font-semibold flex-shrink-0"
-        style={{ ...dim, fontSize: Math.round(size * 0.35) }}
+        className="rounded-full bg-[#1A6B3C] text-white flex items-center justify-center font-semibold"
+        style={{ ...containerStyle, fontSize: Math.round(size * 0.35) }}
       >
         {initials(name)}
       </div>
@@ -31,13 +37,17 @@ export default function PersonAvatar({ src, name, size }: Props) {
   }
 
   return (
-    <img
-      src={src}
-      alt={name}
-      className="rounded-full object-cover flex-shrink-0"
-      style={dim}
-      onError={() => setErrored(true)}
-      loading="lazy"
-    />
+    <div
+      className="rounded-full overflow-hidden"
+      style={containerStyle}
+    >
+      <img
+        src={src}
+        alt={name}
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        onError={() => setErrored(true)}
+        loading="lazy"
+      />
+    </div>
   );
 }

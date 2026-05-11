@@ -8,99 +8,148 @@ const navLinks = [
   { label: "Summit", href: "https://triibe.org/summit" },
   { label: "TRIIBE Talk", href: "https://triibe.org/triibetalk" },
   { label: "Media", href: "https://triibe.org/media" },
-  { label: "About Us", href: "https://triibe.org/about", active: true },
+  { label: "About us", href: "https://triibe.org/about", active: true },
 ];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <a href="https://triibe.org" aria-label="TRIIBE home">
-            <img
-              src="/images/triibe-logo.png"
-              alt="TRIIBE"
-              className="h-7"
-              style={{ filter: "brightness(0)" }}
-            />
-          </a>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={`text-[13px] font-medium transition-colors ${
-                  link.active
-                    ? "text-[#1A6B3C]"
-                    : "text-[#111111] hover:text-[#1A6B3C]"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+        {/* Logo */}
+        <a href="https://triibe.org" className="flex items-center shrink-0">
+          <img
+            src="/images/triibe-logo-black.png"
+            alt="TRIIBE"
+            style={{ height: 32, width: "auto", objectFit: "contain" }}
+          />
+        </a>
 
-          {/* CTAs + mobile toggle */}
-          <div className="flex items-center gap-3">
-            <div className="hidden lg:flex items-center gap-3">
-              <a
-                href="https://donate.rayzeapp.com/orgs/tIbe07j0XKkLQezHHXoz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-semibold px-4 py-2 rounded-full border border-[#1A6B3C] text-[#1A6B3C] hover:bg-[#EAF3DE] transition-colors"
-              >
-                Donate
-              </a>
-              <a
-                href="https://triibe.org/apply"
-                className="text-xs font-semibold px-4 py-2 rounded-full bg-[#1A6B3C] text-white hover:bg-[#2D7A4B] transition-colors"
-              >
-                Apply
-              </a>
-            </div>
-            <button
-              onClick={() => setOpen((o) => !o)}
-              className="lg:hidden text-[#111111] p-1"
-              aria-label="Toggle menu"
-            >
-              {open ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile dropdown */}
-      {open && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3">
+        {/* Desktop nav links */}
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.href}
               href={link.href}
-              className={`block text-sm font-medium ${
-                link.active ? "text-[#1A6B3C]" : "text-[#111111]"
-              }`}
-              onClick={() => setOpen(false)}
+              className="text-[13px] font-medium transition-colors duration-200"
+              style={{
+                color: link.active ? "#1A6B3C" : "#111111",
+                borderBottom: link.active
+                  ? "1px solid #1A6B3C"
+                  : "1px solid transparent",
+                paddingBottom: "2px",
+              }}
+              onMouseEnter={(e) => {
+                if (!link.active) e.currentTarget.style.color = "#1A6B3C";
+              }}
+              onMouseLeave={(e) => {
+                if (!link.active) e.currentTarget.style.color = "#111111";
+              }}
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-3 flex gap-3 border-t border-gray-100">
+        </div>
+
+        {/* Desktop CTAs */}
+        <div className="hidden lg:flex items-center gap-3">
+          <a
+            href="https://donate.rayzeapp.com/orgs/tIbe07j0XKkLQezHHXoz"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontSize: "13px",
+              fontWeight: 600,
+              padding: "7px 18px",
+              borderRadius: "4px",
+              border: "1px solid #1A6B3C",
+              color: "#1A6B3C",
+              backgroundColor: "transparent",
+              transition: "background-color 0.2s",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "#EAF3DE")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "transparent")
+            }
+          >
+            Donate
+          </a>
+          <a
+            href="https://triibe.org/apply"
+            style={{
+              fontSize: "13px",
+              fontWeight: 600,
+              padding: "7px 18px",
+              borderRadius: "4px",
+              backgroundColor: "#1A6B3C",
+              color: "white",
+              transition: "background-color 0.2s",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "#2D7A4B")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "#1A6B3C")
+            }
+          >
+            Apply
+          </a>
+        </div>
+
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="lg:hidden text-[#111111] p-1"
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-6 flex flex-col gap-5">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="text-[13px] font-medium transition-colors"
+              style={{ color: link.active ? "#1A6B3C" : "#111111" }}
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="flex gap-3 pt-3 border-t border-gray-100">
             <a
               href="https://donate.rayzeapp.com/orgs/tIbe07j0XKkLQezHHXoz"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-semibold px-4 py-2 rounded-full border border-[#1A6B3C] text-[#1A6B3C]"
+              style={{
+                fontSize: "13px",
+                fontWeight: 600,
+                padding: "7px 18px",
+                borderRadius: "4px",
+                border: "1px solid #1A6B3C",
+                color: "#1A6B3C",
+              }}
             >
               Donate
             </a>
             <a
               href="https://triibe.org/apply"
-              className="text-xs font-semibold px-4 py-2 rounded-full bg-[#1A6B3C] text-white"
+              style={{
+                fontSize: "13px",
+                fontWeight: 600,
+                padding: "7px 18px",
+                borderRadius: "4px",
+                backgroundColor: "#1A6B3C",
+                color: "white",
+              }}
             >
               Apply
             </a>
