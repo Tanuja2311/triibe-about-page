@@ -18,7 +18,8 @@
       "Bash(Select-Object FullName)",
       "WebFetch(domain:triibe.org)",
       "PowerShell(Invoke-WebRequest -Uri \"https://triibe.org/images/home/header1.png\" -OutFile \"D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\triibe-logo-black.png\" -UseBasicParsing; Write-Output \"Downloaded: $\\(\\(Get-Item 'D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\triibe-logo-black.png'\\).Length\\) bytes\")",
-      "Bash(ping -n 4 127.0.0.1)"
+      "Bash(ping -n 4 127.0.0.1)",
+      "Bash(npx tsc *)"
     ]
   }
 }

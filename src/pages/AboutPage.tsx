@@ -1,3 +1,4 @@
+import { useState, type CSSProperties } from "react";
 import {
   csuite,
   associateBoard,
@@ -19,6 +20,32 @@ const stats = [
   { value: "17+", label: "Legacy board members" },
   { value: "30+", label: "Honorary members" },
 ];
+
+function PhotoSlot({
+  src,
+  gridStyle,
+}: {
+  src: string;
+  gridStyle?: CSSProperties;
+}) {
+  const [failed, setFailed] = useState(false);
+  const base: CSSProperties = {
+    borderRadius: 10,
+    width: "100%",
+    height: "100%",
+    ...gridStyle,
+  };
+  return failed ? (
+    <div style={{ ...base, background: "#EAF3DE" }} />
+  ) : (
+    <img
+      src={src}
+      alt=""
+      onError={() => setFailed(true)}
+      style={{ ...base, objectFit: "cover", display: "block" }}
+    />
+  );
+}
 
 function SectionHeader({
   title,
@@ -44,42 +71,74 @@ export default function AboutPage() {
     <main className="bg-white min-h-screen">
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 py-16 lg:py-20">
-        <p className="text-[#78C896] text-[11px] uppercase tracking-widest font-semibold mb-5">
-          Our organizational structure
-        </p>
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#111111] leading-tight mb-8">
-          Everyone you see below is building{" "}
-          <img
-            src="/images/triibe-logo-black.png"
-            alt="TRIIBE"
-            className="inline-block"
-            style={{
-              height: "0.85em",
-              verticalAlign: "middle",
-            }}
-          />
-          .
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-          <p className="text-gray-600 text-sm leading-relaxed">
-            TRIIBE runs on eight global departments, chapters in six countries, and
-            dozens of legacy advisors and honorary changemakers. From the C-Suite to the
-            associate board pipeline — everyone listed below is actively building the
-            infrastructure next-gen nonprofit founders need to grow without burning out.
-          </p>
-          <div className="grid grid-cols-2 gap-3">
-            {stats.map(({ value, label }) => (
-              <div
-                key={label}
-                className="rounded-lg p-4 border border-[#C0DD97]"
-                style={{ background: "rgba(26,107,60,0.08)" }}
-              >
-                <p className="text-2xl font-bold text-[#1A6B3C]">{value}</p>
-                <p className="text-xs text-[#2D7A4B] mt-0.5">{label}</p>
-              </div>
-            ))}
+      <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Left column */}
+          <div>
+            <p
+              className="uppercase font-medium text-[#1A6B3C] mb-4"
+              style={{ fontSize: 11, letterSpacing: 3 }}
+            >
+              OUR ORGANIZATIONAL STRUCTURE
+            </p>
+            <h1
+              className="font-extrabold text-[#111]"
+              style={{ fontSize: 32, lineHeight: 1.25, letterSpacing: "-0.5px", marginBottom: 0 }}
+            >
+              <span style={{ display: "block", marginBottom: 12 }}>
+                Everyone you see below is building
+              </span>
+              <img src="/images/triibe-logo-black.png" alt="TRIIBE" style={{ height: 52, display: "inline-block", filter: "brightness(0)" }} />
+              <span>.</span>
+            </h1>
+            <p style={{ fontSize: 13, color: "#555", lineHeight: 1.75, marginTop: "2rem" }}>
+              Our board of directors, legally bound to be under 30, govern the
+              foundation, with an associate board as the pipeline to future
+              directors. Our legacy board and each location's advisory board
+              over 30 opens doors and bridges generational expertise. Eight
+              global departments and a network of managing directors run day to
+              day operations, and our honorary members champion us in their own
+              communities.
+            </p>
           </div>
+
+          {/* Right column — asymmetric photo mosaic */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gridTemplateRows: "1fr 1fr",
+              gap: 6,
+              height: 340,
+            }}
+          >
+            <PhotoSlot src="/images/about/about-photo-1.jpg" />
+            <PhotoSlot
+              src="/images/about/about-photo-2.jpg"
+              gridStyle={{ gridColumn: 2, gridRow: "span 2" }}
+            />
+            <PhotoSlot src="/images/about/about-photo-3.jpg" />
+          </div>
+        </div>
+
+        {/* Stats bar */}
+        <div
+          className="flex justify-around"
+          style={{
+            paddingTop: "2rem",
+            marginTop: "2rem",
+            borderTop: "0.5px solid #e8e8e8",
+          }}
+        >
+          {stats.map(({ value, label }) => (
+            <div key={label} className="text-center">
+              <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>
+                {value}
+              </p>
+              <p style={{ fontSize: 11, color: "#888" }}>{label}</p>
+            </div>
+          ))}
         </div>
       </div>
 
