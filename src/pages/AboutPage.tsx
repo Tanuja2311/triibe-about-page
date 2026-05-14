@@ -1,4 +1,6 @@
-import { useState, type CSSProperties } from "react";
+import { useState, useRef, useEffect, type CSSProperties } from "react";
+import { useCountUp } from "../hooks/useCountUp";
+import { FadeUp } from "../components/FadeUp";
 import {
   csuite,
   associateBoard,
@@ -13,13 +15,6 @@ import LegacyMemberItem from "../components/LegacyMemberItem";
 import LocationCard from "../components/LocationCard";
 import DepartmentRow from "../components/DepartmentRow";
 import HonoraryItem from "../components/HonoraryItem";
-
-const stats = [
-  { value: "8", label: "Global departments" },
-  { value: "6", label: "Locations worldwide" },
-  { value: "17+", label: "Legacy board members" },
-  { value: "30+", label: "Honorary members" },
-];
 
 function PhotoSlot({
   src,
@@ -67,6 +62,31 @@ function SectionHeader({
 }
 
 export default function AboutPage() {
+  const { count: count0, start: start0 } = useCountUp(8);
+  const { count: count1, start: start1 } = useCountUp(6);
+  const { count: count2, start: start2 } = useCountUp(17);
+  const { count: count3, start: start3 } = useCountUp(30);
+
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !animated) {
+          setAnimated(true);
+          start0();
+          setTimeout(() => start1(), 100);
+          setTimeout(() => start2(), 200);
+          setTimeout(() => start3(), 300);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (statsRef.current) observer.observe(statsRef.current);
+    return () => observer.disconnect();
+  }, [animated]);
+
   return (
     <main className="bg-white min-h-screen">
 
@@ -75,7 +95,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left column */}
-          <div>
+          <FadeUp delay={0}>
             <p
               className="uppercase font-medium text-[#1A6B3C] mb-4"
               style={{ fontSize: 11, letterSpacing: 3 }}
@@ -89,7 +109,11 @@ export default function AboutPage() {
               <span style={{ display: "block", marginBottom: 12 }}>
                 Everyone you see below is building
               </span>
-              <img src="/images/triibe-logo-black.png" alt="TRIIBE" style={{ height: 52, display: "inline-block", filter: "brightness(0)" }} />
+              <img
+                src="/images/triibe-logo-black.png"
+                alt="TRIIBE"
+                style={{ height: 52, display: "inline-block", filter: "brightness(0)" }}
+              />
               <span>.</span>
             </h1>
             <p style={{ fontSize: 13, color: "#555", lineHeight: 1.75, marginTop: "2rem" }}>
@@ -101,59 +125,84 @@ export default function AboutPage() {
               day operations, and our honorary members champion us in their own
               communities.
             </p>
-          </div>
+          </FadeUp>
 
           {/* Right column — asymmetric photo mosaic */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gridTemplateRows: "1fr 1fr",
-              gap: 6,
-              height: 340,
-            }}
-          >
-            <PhotoSlot src="/images/about/about-photo-1.jpg" />
-            <PhotoSlot
-              src="/images/about/about-photo-2.jpg"
-              gridStyle={{ gridColumn: 2, gridRow: "span 2" }}
-            />
-            <PhotoSlot src="/images/about/about-photo-3.jpg" />
-          </div>
+          <FadeUp delay={150}>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gridTemplateRows: "1fr 1fr",
+                gap: 6,
+                height: 340,
+              }}
+            >
+              <PhotoSlot src="/images/about/about-photo-1.jpg" />
+              <PhotoSlot
+                src="/images/about/about-photo-2.jpg"
+                gridStyle={{ gridColumn: 2, gridRow: "span 2" }}
+              />
+              <PhotoSlot src="/images/about/about-photo-3.jpg" />
+            </div>
+          </FadeUp>
         </div>
 
         {/* Stats bar */}
-        <div
-          className="flex justify-around"
-          style={{
-            paddingTop: "2rem",
-            marginTop: "2rem",
-            borderTop: "0.5px solid #e8e8e8",
-          }}
-        >
-          {stats.map(({ value, label }) => (
-            <div key={label} className="text-center">
-              <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>
-                {value}
-              </p>
-              <p style={{ fontSize: 11, color: "#888" }}>{label}</p>
+        <FadeUp delay={250}>
+          <div
+            ref={statsRef}
+            className="flex justify-around"
+            style={{
+              paddingTop: "2rem",
+              marginTop: "2rem",
+              borderTop: "0.5px solid #e8e8e8",
+            }}
+          >
+            <div className="text-center">
+              <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>{count0}</p>
+              <p style={{ fontSize: 11, color: "#888" }}>Global departments</p>
             </div>
-          ))}
-        </div>
+            <div className="text-center">
+              <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>{count1}</p>
+              <p style={{ fontSize: 11, color: "#888" }}>Locations worldwide</p>
+            </div>
+            <div className="text-center">
+              <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>
+                {count2}
+                <span style={{ opacity: count2 === 17 ? 1 : 0, transition: "opacity 0.3s ease" }}>+</span>
+              </p>
+              <p style={{ fontSize: 11, color: "#888" }}>Legacy board members</p>
+            </div>
+            <div className="text-center">
+              <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>
+                {count3}
+                <span style={{ opacity: count3 === 30 ? 1 : 0, transition: "opacity 0.3s ease" }}>+</span>
+              </p>
+              <p style={{ fontSize: 11, color: "#888" }}>Honorary members</p>
+            </div>
+          </div>
+        </FadeUp>
       </div>
 
       {/* ── Sticky Table of Contents ──────────────────────────────── */}
-      <TableOfContents />
+      <FadeUp delay={0}>
+        <TableOfContents />
+      </FadeUp>
 
       {/* ── Sections ─────────────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-6">
 
         {/* C-Suite & Board */}
         <section id="csuite" className="py-16 scroll-mt-28">
-          <SectionHeader title="C-Suite & Board" />
+          <FadeUp delay={0}>
+            <SectionHeader title="C-Suite & Board" />
+          </FadeUp>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {csuite.map((person) => (
-              <PersonCard key={person.name} person={person} photoSize={96} />
+            {csuite.map((person, i) => (
+              <FadeUp key={person.name} delay={i * 100}>
+                <PersonCard person={person} photoSize={96} />
+              </FadeUp>
             ))}
           </div>
         </section>
@@ -163,13 +212,17 @@ export default function AboutPage() {
           id="associate"
           className="py-16 border-t border-gray-100 scroll-mt-28"
         >
-          <SectionHeader
-            title="Associate Board"
-            description="The associate board is the pipeline to future TRIIBE directors — the next generation of leaders building toward governance. Invitations going out now."
-          />
+          <FadeUp delay={0}>
+            <SectionHeader
+              title="Associate Board"
+              description="The associate board is the pipeline to future TRIIBE directors — the next generation of leaders building toward governance. Invitations going out now."
+            />
+          </FadeUp>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {associateBoard.map((person) => (
-              <PersonCard key={person.name} person={person} photoSize={80} />
+            {associateBoard.map((person, i) => (
+              <FadeUp key={person.name} delay={i * 80}>
+                <PersonCard person={person} photoSize={80} />
+              </FadeUp>
             ))}
           </div>
         </section>
@@ -179,15 +232,19 @@ export default function AboutPage() {
           id="legacy"
           className="py-16 border-t border-gray-100 scroll-mt-28"
         >
-          <SectionHeader
-            title="Legacy Board"
-            description="Experienced leaders who advise, connect, and champion TRIIBE's mission across sectors and generations."
-          />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {legacyBoard.map((person) => (
-              <LegacyMemberItem key={person.name} person={person} />
-            ))}
-          </div>
+          <FadeUp delay={0}>
+            <SectionHeader
+              title="Legacy Board"
+              description="Experienced leaders who advise, connect, and champion TRIIBE's mission across sectors and generations."
+            />
+          </FadeUp>
+          <FadeUp delay={100}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              {legacyBoard.map((person) => (
+                <LegacyMemberItem key={person.name} person={person} />
+              ))}
+            </div>
+          </FadeUp>
         </section>
 
         {/* Locations */}
@@ -195,13 +252,17 @@ export default function AboutPage() {
           id="locations"
           className="py-16 border-t border-gray-100 scroll-mt-28"
         >
-          <SectionHeader
-            title="Locations"
-            description="TRIIBE is decentralized by design. Each location is led by a chapter director building community on the ground."
-          />
+          <FadeUp delay={0}>
+            <SectionHeader
+              title="Locations"
+              description="TRIIBE is decentralized by design. Each location is led by a chapter director building community on the ground."
+            />
+          </FadeUp>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {locations.map((loc) => (
-              <LocationCard key={loc.name + loc.location} entry={loc} />
+            {locations.map((loc, i) => (
+              <FadeUp key={loc.name + loc.location} delay={i * 80}>
+                <LocationCard entry={loc} />
+              </FadeUp>
             ))}
           </div>
         </section>
@@ -211,13 +272,17 @@ export default function AboutPage() {
           id="departments"
           className="py-16 border-t border-gray-100 scroll-mt-28"
         >
-          <SectionHeader
-            title="Departments"
-            description="Eight departments, each led by a head and supported by a growing team of contributors."
-          />
+          <FadeUp delay={0}>
+            <SectionHeader
+              title="Departments"
+              description="Eight departments, each led by a head and supported by a growing team of contributors."
+            />
+          </FadeUp>
           <div className="space-y-4">
-            {departments.map((dept) => (
-              <DepartmentRow key={dept.name} department={dept} />
+            {departments.map((dept, i) => (
+              <FadeUp key={dept.name} delay={i * 100}>
+                <DepartmentRow department={dept} />
+              </FadeUp>
             ))}
           </div>
         </section>
@@ -227,15 +292,19 @@ export default function AboutPage() {
           id="honorary"
           className="py-16 border-t border-gray-100 scroll-mt-28 pb-24"
         >
-          <SectionHeader
-            title="Honorary Members"
-            description="Changemakers who have contributed to the TRIIBE community and whose work we carry forward."
-          />
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-x-4 gap-y-10">
-            {honoraryMembers.map((member) => (
-              <HonoraryItem key={member.name} member={member} />
-            ))}
-          </div>
+          <FadeUp delay={0}>
+            <SectionHeader
+              title="Honorary Members"
+              description="Changemakers who have contributed to the TRIIBE community and whose work we carry forward."
+            />
+          </FadeUp>
+          <FadeUp delay={100}>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-x-4 gap-y-10">
+              {honoraryMembers.map((member) => (
+                <HonoraryItem key={member.name} member={member} />
+              ))}
+            </div>
+          </FadeUp>
         </section>
 
       </div>
