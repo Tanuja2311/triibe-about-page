@@ -20,12 +20,22 @@ export interface Department {
   members: DepartmentMember[];
 }
 
-export interface LocationEntry {
+export interface LocationAdvisoryMember {
   name: string;
-  location: string;
-  locationPath?: string; // only set when the triibe.org page exists
   imagePath: string;
   linkedIn?: string;
+  role?: string;
+}
+
+export interface LocationEntry {
+  location: string;
+  flag: string;
+  mdName?: string;
+  mdImagePath?: string;
+  mdLinkedIn?: string;
+  advisoryBoard: LocationAdvisoryMember[];
+  advisoryBoardForming: boolean;
+  locationPath?: string;
 }
 
 export interface HonoraryMember {

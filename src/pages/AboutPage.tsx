@@ -61,6 +61,30 @@ function SectionHeader({
   );
 }
 
+const ctaCards = [
+  {
+    title: "Join a cohort",
+    body: "Are you a next-gen nonprofit founder? Apply to become a TRIIBE Fellow.",
+    buttonText: "Apply",
+    href: "https://www.triibe.org/apply",
+    external: true,
+  },
+  {
+    title: "Get involved",
+    body: "Partner with TRIIBE to empower next-gen founders.",
+    buttonText: "Contact us",
+    href: "mailto:partnerships@triibe.org",
+    external: false,
+  },
+  {
+    title: "Fund our work",
+    body: "Your donation helps next-gen founders take root today to advance tomorrow.",
+    buttonText: "Donate",
+    href: "https://donate.rayzeapp.com/orgs/tIbe07j0XKkLQezHHXoz",
+    external: true,
+  },
+];
+
 export default function AboutPage() {
   const { count: count0, start: start0 } = useCountUp(8);
   const { count: count1, start: start1 } = useCountUp(6);
@@ -122,7 +146,7 @@ export default function AboutPage() {
               directors. Our legacy board and each location's advisory board
               over 30 opens doors and bridges generational expertise. Eight
               global departments and a network of managing directors run day to
-              day operations, and our honorary members champion us in their own
+              day operations, and our community members champion us in their own
               communities.
             </p>
           </FadeUp>
@@ -179,7 +203,7 @@ export default function AboutPage() {
                 {count3}
                 <span style={{ opacity: count3 === 30 ? 1 : 0, transition: "opacity 0.3s ease" }}>+</span>
               </p>
-              <p style={{ fontSize: 11, color: "#888" }}>Honorary members</p>
+              <p style={{ fontSize: 11, color: "#888" }}>Community members</p>
             </div>
           </div>
         </FadeUp>
@@ -255,12 +279,12 @@ export default function AboutPage() {
           <FadeUp delay={0}>
             <SectionHeader
               title="Locations"
-              description="TRIIBE is decentralized by design. Each location is led by a chapter director building community on the ground."
+              description="TRIIBE is decentralized by design. Each location is led by a managing director building community on the ground."
             />
           </FadeUp>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-4">
             {locations.map((loc, i) => (
-              <FadeUp key={loc.name + loc.location} delay={i * 80}>
+              <FadeUp key={loc.location} delay={i * 80}>
                 <LocationCard entry={loc} />
               </FadeUp>
             ))}
@@ -287,15 +311,15 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Honorary Members */}
+        {/* Members */}
         <section
-          id="honorary"
-          className="py-16 border-t border-gray-100 scroll-mt-28 pb-24"
+          id="members"
+          className="py-16 border-t border-gray-100 scroll-mt-28"
         >
           <FadeUp delay={0}>
             <SectionHeader
-              title="Honorary Members"
-              description="Changemakers who have contributed to the TRIIBE community and whose work we carry forward."
+              title="Members"
+              description="Founders and contributors who have shaped the TRIIBE community and whose work we carry forward."
             />
           </FadeUp>
           <FadeUp delay={100}>
@@ -308,6 +332,51 @@ export default function AboutPage() {
         </section>
 
       </div>
+
+      {/* ── 3-CTA Section ────────────────────────────────────────── */}
+      <section style={{ backgroundColor: "#0D2B1E", paddingTop: 80, paddingBottom: 80, width: "100%" }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: 24 }}>
+            {ctaCards.map((card) => (
+              <div
+                key={card.title}
+                style={{
+                  border: "1px solid rgba(255,255,255,0.25)",
+                  borderRadius: 14,
+                  padding: "2.5rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  minHeight: 220,
+                }}
+              >
+                <h3 style={{ color: "white", fontWeight: 700, fontSize: 22, margin: 0, marginBottom: 16 }}>
+                  {card.title}
+                </h3>
+                <p style={{ color: "rgba(255,255,255,0.72)", fontSize: 14, lineHeight: 1.65, margin: 0 }}>
+                  {card.body}
+                </p>
+                <a
+                  href={card.href}
+                  target={card.external ? "_blank" : undefined}
+                  rel={card.external ? "noopener noreferrer" : undefined}
+                  className="block w-full text-center bg-white text-[#0D2B1E] hover:bg-[#f0f0f0] transition-colors"
+                  style={{
+                    marginTop: "1.5rem",
+                    padding: "14px 0",
+                    borderRadius: 8,
+                    fontSize: 15,
+                    fontWeight: 700,
+                    textDecoration: "none",
+                  }}
+                >
+                  {card.buttonText}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }

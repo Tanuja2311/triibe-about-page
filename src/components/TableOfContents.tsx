@@ -6,7 +6,7 @@ const sections = [
   { id: "legacy", label: "Legacy Board", Icon: Star },
   { id: "locations", label: "Locations", Icon: MapPin },
   { id: "departments", label: "Departments", Icon: LayoutGrid },
-  { id: "honorary", label: "Honorary Members", Icon: Award },
+  { id: "members", label: "Members", Icon: Award },
 ];
 
 export default function TableOfContents() {

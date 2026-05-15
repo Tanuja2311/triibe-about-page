@@ -23,13 +23,23 @@ export default function PersonAvatar({ src, name, size }: Props) {
     height: size,
     minWidth: size,
     flexShrink: 0,
+    borderRadius: 8,
+    overflow: "hidden",
   };
 
   if (errored) {
     return (
       <div
-        className="rounded-full bg-[#1A6B3C] text-white flex items-center justify-center font-semibold"
-        style={{ ...containerStyle, fontSize: Math.round(size * 0.35) }}
+        style={{
+          ...containerStyle,
+          background: "#1A6B3C",
+          color: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontWeight: 600,
+          fontSize: Math.round(size * 0.35),
+        }}
       >
         {initials(name)}
       </div>
@@ -37,14 +47,11 @@ export default function PersonAvatar({ src, name, size }: Props) {
   }
 
   return (
-    <div
-      className="rounded-full overflow-hidden"
-      style={containerStyle}
-    >
+    <div style={containerStyle}>
       <img
         src={src}
         alt={name}
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
         onError={() => setErrored(true)}
         loading="lazy"
       />
