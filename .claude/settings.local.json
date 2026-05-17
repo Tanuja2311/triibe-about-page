@@ -19,7 +19,14 @@
       "WebFetch(domain:triibe.org)",
       "PowerShell(Invoke-WebRequest -Uri \"https://triibe.org/images/home/header1.png\" -OutFile \"D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\triibe-logo-black.png\" -UseBasicParsing; Write-Output \"Downloaded: $\\(\\(Get-Item 'D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\triibe-logo-black.png'\\).Length\\) bytes\")",
       "Bash(ping -n 4 127.0.0.1)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(Select-String -Path \"D:\\\\Triibe\\\\About-Us-Page\\\\src\\\\**\\\\*.tsx\",\"D:\\\\Triibe\\\\About-Us-Page\\\\src\\\\**\\\\*.ts\",\"D:\\\\Triibe\\\\About-Us-Page\\\\index.html\" -Pattern \"—\" -Recurse)",
+      "Bash(Select-Object Filename, LineNumber, Line)",
+      "PowerShell(New-Item *)",
+      "Bash(curl -s -L \"https://www.triibe.org/about\" -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\")",
+      "Bash(awk '{print $1}')",
+      "Bash(curl -s \"https://www.triibe.org/about\")",
+      "Bash(python3 -c \"import sys, urllib.parse; [print\\(urllib.parse.unquote\\(l.strip\\(\\)\\)\\) for l in sys.stdin]\")"
     ]
   }
 }

@@ -109,7 +109,7 @@ export const legacyBoard: Person[] = [
   },
   {
     name: "Japneet Kaur",
-    imagePath: "/images/team/japneet-kaur.jpg",
+    imagePath: "/images/team/japneet-k.jpg",
     linkedIn: "https://www.linkedin.com/in/japneet-k-34816426/",
   },
   {
@@ -134,7 +134,7 @@ export const legacyBoard: Person[] = [
   },
   {
     name: "Dr. Purnima Voria",
-    imagePath: "/images/team/purnima-voria.jpg",
+    imagePath: "/images/team/dr-purnima-voria.jpg",
     linkedIn: "https://www.linkedin.com/in/purnimavoria/",
   },
   {
