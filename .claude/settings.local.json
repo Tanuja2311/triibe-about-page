@@ -26,7 +26,9 @@
       "Bash(curl -s -L \"https://www.triibe.org/about\" -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\")",
       "Bash(awk '{print $1}')",
       "Bash(curl -s \"https://www.triibe.org/about\")",
-      "Bash(python3 -c \"import sys, urllib.parse; [print\\(urllib.parse.unquote\\(l.strip\\(\\)\\)\\) for l in sys.stdin]\")"
+      "Bash(python3 -c \"import sys, urllib.parse; [print\\(urllib.parse.unquote\\(l.strip\\(\\)\\)\\) for l in sys.stdin]\")",
+      "PowerShell(head *)",
+      "Bash(grep -v \"\\\\.jpg$\")"
     ]
   }
 }

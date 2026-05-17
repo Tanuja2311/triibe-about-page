@@ -25,6 +25,7 @@ export default function PersonAvatar({ src, name, size }: Props) {
     flexShrink: 0,
     borderRadius: 8,
     overflow: "hidden",
+    position: "relative",
   };
 
   if (errored) {
@@ -51,7 +52,7 @@ export default function PersonAvatar({ src, name, size }: Props) {
       <img
         src={src}
         alt={name}
-        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+        style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
         onError={() => setErrored(true)}
         loading="lazy"
       />

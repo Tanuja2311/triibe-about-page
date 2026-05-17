@@ -91,6 +91,7 @@ export const associateBoard: Person[] = [
     name: "Aveneel Waadhwa",
     role: "Member",
     imagePath: "/images/team/aveneel-waadhwa.jpg",
+    linkedIn: "https://www.linkedin.com/in/aveneel/",
   },
 ];
 
@@ -152,13 +153,13 @@ export const legacyBoard: Person[] = [
     name: "Laurence Kalinsky",
     imagePath: "/images/team/laurence-kalinsky.jpg",
   },
-  { name: "Lanz Pierce", imagePath: "/images/team/lanz-pierce.jpg" },
-  { name: "Mariela Dabbah", imagePath: "/images/team/mariela-dabbah.jpg" },
+  { name: "Lanz Pierce", imagePath: "/images/team/lanz-pierce.jpg", linkedIn: "https://www.linkedin.com/in/lanzpierce/" },
+  { name: "Mariela Dabbah", imagePath: "/images/team/mariela-dabbah.jpg", linkedIn: "https://www.linkedin.com/in/marieladabbah/" },
   { name: "Marc Dullaert", imagePath: "/images/team/marc-dullaert.jpg" },
   { name: "Ed Martin", imagePath: "/images/team/ed-martin.jpg" },
-  { name: "David Homan", imagePath: "/images/team/david-homan.jpg" },
-  { name: "Adeline Azrack", imagePath: "/images/team/adeline-azrack.jpg" },
-  { name: "Sandra Fan", imagePath: "/images/team/sandra-fan.jpg" },
+  { name: "David Homan", imagePath: "/images/team/david-homan.jpg", linkedIn: "https://www.linkedin.com/in/davidrhoman/" },
+  { name: "Adeline Azrack", imagePath: "/images/team/adeline-azrack.jpg", linkedIn: "https://www.linkedin.com/in/adeline-azrack-0853023/" },
+  { name: "Sandra Fan", imagePath: "/images/team/sandra-fan.jpg", linkedIn: "https://www.linkedin.com/in/sandrafan/" },
 ];
 
 export const locations: LocationEntry[] = [
@@ -171,10 +172,10 @@ export const locations: LocationEntry[] = [
     advisoryBoard: [
       { name: "Helen Kramer", imagePath: "/images/team/helen-kramer.jpg", role: "Chair" },
       { name: "Jonny Imerman", imagePath: "/images/team/jonny-imerman.jpg", linkedIn: "https://www.linkedin.com/in/imermanangels/", role: "Vice Chair" },
-      { name: "Jen Libby", imagePath: "/images/team/jen-libby.jpg" },
-      { name: "Marcia Nelson", imagePath: "/images/team/marcia-nelson.jpg" },
-      { name: "Wendy Diamond", imagePath: "/images/team/wendy-diamond.jpg" },
-      { name: "Yvonne Beri", imagePath: "/images/team/yvonne-beri.jpg" },
+      { name: "Jen Libby", imagePath: "/images/team/jen-libby.jpg", linkedIn: "https://www.linkedin.com/in/jen-libby-changemaker/" },
+      { name: "Marcia Nelson", imagePath: "/images/team/marcia-nelson.jpg", linkedIn: "https://www.linkedin.com/in/marciasnelson/" },
+      { name: "Wendy Diamond", imagePath: "/images/team/wendy-diamond.jpg", linkedIn: "https://www.linkedin.com/in/wendydiamond/" },
+      { name: "Yvonne Beri", imagePath: "/images/team/yvonne-beri.jpg", linkedIn: "https://www.linkedin.com/in/yvonneberi/" },
       { name: "Mariam Azarm", imagePath: "/images/team/mariam-azarm.jpg" },
     ],
     advisoryBoardForming: false,
