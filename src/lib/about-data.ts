@@ -13,7 +13,7 @@ import type { Person, Department, LocationEntry, HonoraryMember } from "../types
 export const csuite: Person[] = [
   {
     name: "Kyle Matthys",
-    role: "Executive Director / CEO",
+    role: "Founder & CEO",
     imagePath: "/images/team/kyle-matthys.jpg",
     linkedIn: "https://www.linkedin.com/in/kylematthys/",
   },
