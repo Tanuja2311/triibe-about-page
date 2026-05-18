@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+﻿import type { LucideIcon } from "lucide-react";
 import { Mail, Linkedin, Youtube, Instagram } from "lucide-react";
 
 // ─── data ────────────────────────────────────────────────────────────────────
@@ -75,7 +75,7 @@ function TikTokIcon() {
 
 /**
  * Reusable TRIIBE site footer.
- * Matches triibe.org — white background, 5-column top grid, dark bottom bar.
+ * Matches triibe.org, white background, 5-column top grid, dark bottom bar.
  * Import and drop in at the bottom of any TRIIBE page.
  */
 export default function Footer() {
@@ -88,7 +88,7 @@ export default function Footer() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8"
           style={{ paddingBottom: "2rem", borderBottom: "0.5px solid #e8e8e8" }}
         >
-          {/* Col 1 — Brand */}
+          {/* Col 1, Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <img
               src="/images/triibe-logo-black.png"
@@ -100,7 +100,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Cols 2–4 — Link groups */}
+          {/* Cols 2-4, Link groups */}
           {linkGroups.map(({ heading, links }) => (
             <div key={heading}>
               <p style={{ fontWeight: 600, fontSize: 13, color: "#111", marginBottom: 12 }}>
@@ -112,7 +112,7 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Col 5 — Transparency */}
+          {/* Col 5, Transparency */}
           <div>
             <p style={{ fontWeight: 600, fontSize: 13, color: "#111", marginBottom: 12 }}>
               Transparency
@@ -156,7 +156,7 @@ export default function Footer() {
               </a>
             ))}
 
-            {/* TikTok — no Lucide icon, inline SVG */}
+            {/* TikTok, no Lucide icon, inline SVG */}
             <a
               href="https://www.tiktok.com/@triibetalk"
               target="_blank"

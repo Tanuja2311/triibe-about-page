@@ -3,6 +3,7 @@ import type { LucideIcon } from "lucide-react";
 export interface Person {
   name: string;
   role?: string;
+  title?: string;
   imagePath: string;
   linkedIn?: string;
 }

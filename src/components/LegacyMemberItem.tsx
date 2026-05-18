@@ -14,6 +14,9 @@ export default function LegacyMemberItem({ person }: Props) {
       {person.role && (
         <p className="text-[10px] text-[#2D7A4B] -mt-1">{person.role}</p>
       )}
+      {person.title && (
+        <p style={{ fontSize: 11, color: "#888", marginTop: -2, lineHeight: 1.4 }}>{person.title}</p>
+      )}
       <LinkedInBadge url={person.linkedIn} />
     </div>
   );

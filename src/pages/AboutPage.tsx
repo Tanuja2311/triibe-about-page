@@ -18,9 +18,11 @@ import HonoraryItem from "../components/HonoraryItem";
 
 function PhotoSlot({
   src,
+  avifSrc,
   gridStyle,
 }: {
   src: string;
+  avifSrc?: string;
   gridStyle?: CSSProperties;
 }) {
   const [failed, setFailed] = useState(false);
@@ -30,9 +32,21 @@ function PhotoSlot({
     height: "100%",
     ...gridStyle,
   };
-  return failed ? (
-    <div style={{ ...base, background: "#EAF3DE" }} />
-  ) : (
+  if (failed) return <div style={{ ...base, background: "#EAF3DE" }} />;
+  if (avifSrc) {
+    return (
+      <picture style={gridStyle}>
+        <source srcSet={avifSrc} type="image/avif" />
+        <img
+          src={src}
+          alt=""
+          onError={() => setFailed(true)}
+          style={{ ...base, objectFit: "cover", display: "block" }}
+        />
+      </picture>
+    );
+  }
+  return (
     <img
       src={src}
       alt=""
@@ -87,9 +101,9 @@ const ctaCards = [
 
 export default function AboutPage() {
   const { count: count0, start: start0 } = useCountUp(8);
-  const { count: count1, start: start1 } = useCountUp(6);
-  const { count: count2, start: start2 } = useCountUp(17);
-  const { count: count3, start: start3 } = useCountUp(30);
+  const { count: count1, start: start1 } = useCountUp(9);
+  const { count: count2, start: start2 } = useCountUp(80);
+  const { count: count3, start: start3 } = useCountUp(9);
 
   const statsRef = useRef<HTMLDivElement>(null);
   const [animated, setAnimated] = useState(false);
@@ -151,7 +165,7 @@ export default function AboutPage() {
             </p>
           </FadeUp>
 
-          {/* Right column — asymmetric photo mosaic */}
+          {/* Right column, asymmetric photo mosaic */}
           <FadeUp delay={150}>
             <div
               style={{
@@ -162,12 +176,9 @@ export default function AboutPage() {
                 height: 340,
               }}
             >
-              <PhotoSlot src="/images/about/about-photo-1.jpg" />
-              <PhotoSlot
-                src="/images/about/about-photo-2.jpg"
-                gridStyle={{ gridColumn: 2, gridRow: "span 2" }}
-              />
-              <PhotoSlot src="/images/about/about-photo-3.jpg" />
+              <div style={{ borderRadius: 10, width: "100%", height: "100%", background: "#EAF3DE" }} />
+              <div style={{ borderRadius: 10, width: "100%", height: "100%", background: "#EAF3DE", gridColumn: 2, gridRow: "span 2" }} />
+              <div style={{ borderRadius: 10, width: "100%", height: "100%", background: "#EAF3DE" }} />
             </div>
           </FadeUp>
         </div>
@@ -189,21 +200,18 @@ export default function AboutPage() {
             </div>
             <div className="text-center">
               <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>{count1}</p>
-              <p style={{ fontSize: 11, color: "#888" }}>Locations worldwide</p>
+              <p style={{ fontSize: 11, color: "#888" }}>Nonprofit founders funded</p>
             </div>
             <div className="text-center">
               <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>
                 {count2}
-                <span style={{ opacity: count2 === 17 ? 1 : 0, transition: "opacity 0.3s ease" }}>+</span>
+                <span style={{ opacity: count2 === 80 ? 1 : 0, transition: "opacity 0.3s ease" }}>+</span>
               </p>
-              <p style={{ fontSize: 11, color: "#888" }}>Legacy board members</p>
+              <p style={{ fontSize: 11, color: "#888" }}>TRIIBE members</p>
             </div>
             <div className="text-center">
-              <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>
-                {count3}
-                <span style={{ opacity: count3 === 30 ? 1 : 0, transition: "opacity 0.3s ease" }}>+</span>
-              </p>
-              <p style={{ fontSize: 11, color: "#888" }}>Community members</p>
+              <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>{count3}</p>
+              <p style={{ fontSize: 11, color: "#888" }}>Locations worldwide</p>
             </div>
           </div>
         </FadeUp>
@@ -239,7 +247,7 @@ export default function AboutPage() {
           <FadeUp delay={0}>
             <SectionHeader
               title="Associate Board"
-              description="The associate board is the pipeline to future TRIIBE directors — the next generation of leaders building toward governance. Invitations going out now."
+              description="Associate Board Members serve as a pipeline to the Board of Directors, contribute to the Corporation's standing committees, and provide perspective and recommendations on the direction of the Corporation."
             />
           </FadeUp>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -259,7 +267,7 @@ export default function AboutPage() {
           <FadeUp delay={0}>
             <SectionHeader
               title="Legacy Board"
-              description="Experienced leaders who advise, connect, and champion TRIIBE's mission across sectors and generations."
+              description="Legacy Board members serve as ambassadors, connectors, and advisors, providing the Corporation with institutional credibility, senior-level counsel, and access to networks that advance its mission."
             />
           </FadeUp>
           <FadeUp delay={100}>
@@ -279,7 +287,7 @@ export default function AboutPage() {
           <FadeUp delay={0}>
             <SectionHeader
               title="Locations"
-              description="TRIIBE is decentralized by design. Each location is led by a managing director building community on the ground."
+              description="TRIIBE, like our name, is decentralized by design. Each location is led by a managing director building community on the ground."
             />
           </FadeUp>
           <div className="space-y-4">
@@ -311,15 +319,15 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Members */}
+        {/* Honorary Members */}
         <section
-          id="members"
+          id="honorary"
           className="py-16 border-t border-gray-100 scroll-mt-28"
         >
           <FadeUp delay={0}>
             <SectionHeader
-              title="Members"
-              description="Founders and contributors who have shaped the TRIIBE community and whose work we carry forward."
+              title="Honorary Members"
+              description="Additional contributors who have shaped the TRIIBE community."
             />
           </FadeUp>
           <FadeUp delay={100}>

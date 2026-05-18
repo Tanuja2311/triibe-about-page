@@ -99,72 +99,83 @@ export const associateBoard: Person[] = [
 export const legacyBoard: Person[] = [
   {
     name: "Stefan Avivson",
-    role: "Legacy Board Chair",
+    role: "Chair",
+    title: "CEO Advisor & Entrepreneur",
     imagePath: "/images/team/stefan-avivson.jpg",
     linkedIn: "https://www.linkedin.com/in/avivson/",
   },
   {
+    name: "Chelsea Toler",
+    role: "Vice Chair",
+    title: "Co-Founder, Logictry & President, The Family Foundation",
+    imagePath: "/images/team/chelsea-toler.jpg",
+    linkedIn: "https://www.linkedin.com/in/catoler92/",
+  },
+  {
     name: "Gregg Meyer",
+    title: "Chief Sustainability Officer, Steve Madden",
     imagePath: "/images/team/gregg-meyer.jpg",
     linkedIn: "https://www.linkedin.com/in/gregg-meyer/",
   },
   {
     name: "Japneet Kaur",
+    title: "Cybersecurity & Risk Management Professional, Mphasis",
     imagePath: "/images/team/japneet-k.jpg",
     linkedIn: "https://www.linkedin.com/in/japneet-k-34816426/",
   },
   {
     name: "Geoffrey Sargeant",
+    title: "Managing Director & Head of Capital Markets, The REAL",
     imagePath: "/images/team/geoffrey-sargeant.jpg",
     linkedIn: "https://www.linkedin.com/in/geoffsargeant/",
   },
   {
     name: "Flaviu Simihaian",
+    title: "Founder, 1PB.org & Co-host, Founder Secrets Podcast",
     imagePath: "/images/team/flaviu-simihaian.jpg",
     linkedIn: "https://www.linkedin.com/in/flaviusimihaian/",
   },
   {
     name: "Lara Stein",
+    title: "Founder, TEDx",
     imagePath: "/images/team/lara-stein.jpg",
     linkedIn: "https://www.linkedin.com/in/citizenstein/",
   },
   {
     name: "Stacey Lauren",
+    title: "Founder, Do The Thing & TEDx Speaker",
     imagePath: "/images/team/stacey-lauren.jpg",
     linkedIn: "https://www.linkedin.com/in/staceylauren/",
   },
   {
     name: "Dr. Purnima Voria",
+    title: "Founder & CEO, US India Chamber of Commerce",
     imagePath: "/images/team/dr-purnima-voria.jpg",
     linkedIn: "https://www.linkedin.com/in/purnimavoria/",
   },
   {
     name: "Mark Sadovnick",
+    title: "Founder, 5th Gen Leaders Community",
     imagePath: "/images/team/mark-sadovnick.jpg",
   },
-  // In Conversation — remove when finalised
-  {
-    name: "Chelsea Toler",
-    role: "Legacy Board Vice Chair",
-    imagePath: "/images/team/chelsea-toler.jpg",
-    linkedIn: "https://www.linkedin.com/in/catoler92/",
-  },
+  // In Conversation, remove when finalised
   {
     name: "Laurence Kalinsky",
+    title: "CEO, PVBLIC.org",
     imagePath: "/images/team/laurence-kalinsky.jpg",
   },
-  { name: "Lanz Pierce", imagePath: "/images/team/lanz-pierce.jpg", linkedIn: "https://www.linkedin.com/in/lanzpierce/" },
-  { name: "Mariela Dabbah", imagePath: "/images/team/mariela-dabbah.jpg", linkedIn: "https://www.linkedin.com/in/marieladabbah/" },
-  { name: "Marc Dullaert", imagePath: "/images/team/marc-dullaert.jpg" },
-  { name: "Ed Martin", imagePath: "/images/team/ed-martin.jpg" },
-  { name: "David Homan", imagePath: "/images/team/david-homan.jpg", linkedIn: "https://www.linkedin.com/in/davidrhoman/" },
-  { name: "Adeline Azrack", imagePath: "/images/team/adeline-azrack.jpg", linkedIn: "https://www.linkedin.com/in/adeline-azrack-0853023/" },
-  { name: "Sandra Fan", imagePath: "/images/team/sandra-fan.jpg", linkedIn: "https://www.linkedin.com/in/sandrafan/" },
+  { name: "Lanz Pierce", title: "Media & Entertainment Executive", imagePath: "/images/team/lanz-pierce.jpg", linkedIn: "https://www.linkedin.com/in/lanzpierce/" },
+  { name: "Mariela Dabbah", title: "Founder, Red Shoe Movement", imagePath: "/images/team/mariela-dabbah.jpg", linkedIn: "https://www.linkedin.com/in/marieladabbah/" },
+  { name: "Marc Dullaert", title: "Founder, KidsRights", imagePath: "/images/team/marc-dullaert.jpg" },
+  { name: "Ed Martin", title: "Founder, 100 Billion Meals & Omniwin", imagePath: "/images/team/ed-martin.jpg" },
+  { name: "David Homan", title: "Founder, Orchestrated Connections", imagePath: "/images/team/david-homan.jpg", linkedIn: "https://www.linkedin.com/in/davidrhoman/" },
+  { name: "Adeline Azrack", title: "Managing Director, Chanel Foundation Americas", imagePath: "/images/team/adeline-azrack.jpg", linkedIn: "https://www.linkedin.com/in/adeline-azrack-0853023/" },
+  { name: "Sandra Fan", title: "Family Office Network Leader", imagePath: "/images/team/sandra-fan.jpg", linkedIn: "https://www.linkedin.com/in/sandrafan/" },
 ];
 
 export const locations: LocationEntry[] = [
   {
-    location: "United States — New York",
+    location: "United States, New York",
     flag: "🇺🇸",
     mdName: "Kyle Matthys",
     mdImagePath: "/images/team/kyle-matthys.jpg",
@@ -181,7 +192,7 @@ export const locations: LocationEntry[] = [
     advisoryBoardForming: false,
   },
   {
-    location: "United Kingdom — London",
+    location: "United Kingdom, London",
     flag: "🇬🇧",
     mdName: "Maryam Rana",
     mdImagePath: "/images/team/maryam-rana.jpg",
@@ -196,7 +207,7 @@ export const locations: LocationEntry[] = [
     advisoryBoardForming: false,
   },
   {
-    location: "India — Ranchi",
+    location: "India, Ranchi",
     flag: "🇮🇳",
     mdName: "Satyam Pandey",
     mdImagePath: "/images/team/satyam-pandey.jpg",

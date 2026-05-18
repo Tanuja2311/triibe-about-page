@@ -8,6 +8,7 @@ export default defineConfig({
     port: 8080,
     hmr: { overlay: false },
   },
+  assetsInclude: ["**/*.avif"],
   plugins: [react()],
   resolve: {
     alias: {

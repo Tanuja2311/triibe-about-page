@@ -28,7 +28,9 @@
       "Bash(curl -s \"https://www.triibe.org/about\")",
       "Bash(python3 -c \"import sys, urllib.parse; [print\\(urllib.parse.unquote\\(l.strip\\(\\)\\)\\) for l in sys.stdin]\")",
       "PowerShell(head *)",
-      "Bash(grep -v \"\\\\.jpg$\")"
+      "Bash(grep -v \"\\\\.jpg$\")",
+      "Bash(powershell *)",
+      "Bash(dir D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\about *)"
     ]
   }
 }

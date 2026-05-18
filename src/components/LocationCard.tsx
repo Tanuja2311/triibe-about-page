@@ -113,21 +113,10 @@ export default function LocationCard({ entry }: Props) {
         {/* Advisory Board */}
         {entry.advisoryBoardForming ? (
           <p style={{ fontSize: 11, color: "#aaa", fontStyle: "italic", lineHeight: 1.5 }}>
-            Advisory board forming — invitations going out soon.
+            Advisory board forming.
           </p>
         ) : entry.advisoryBoard.length > 0 ? (
           <div>
-            <p
-              style={{
-                fontSize: 9,
-                color: "#999",
-                textTransform: "uppercase",
-                letterSpacing: 1.2,
-                marginBottom: 10,
-              }}
-            >
-              Advisory Board
-            </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "20px 24px", padding: "12px 0" }}>
               {entry.advisoryBoard.map((member) => (
                 <AdvisoryChip key={member.name} member={member} />
