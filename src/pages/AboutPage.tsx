@@ -134,35 +134,19 @@ export default function AboutPage() {
 
           {/* Left column */}
           <FadeUp delay={0}>
-            <p
-              className="uppercase font-medium text-[#1A6B3C] mb-4"
-              style={{ fontSize: 11, letterSpacing: 3 }}
-            >
-              OUR ORGANIZATIONAL STRUCTURE
-            </p>
             <h1
               className="font-extrabold text-[#111]"
               style={{ fontSize: 32, lineHeight: 1.25, letterSpacing: "-0.5px", marginBottom: 0 }}
             >
-              <span style={{ display: "block", marginBottom: 12 }}>
+              <span style={{ display: "block", fontWeight: 500 }}>
                 Everyone you see below is building
               </span>
               <img
                 src="/images/triibe-logo-black.png"
                 alt="TRIIBE"
-                style={{ height: 52, display: "inline-block", filter: "brightness(0)" }}
+                style={{ height: 48, width: "auto", display: "block", marginTop: 36, filter: "brightness(0)" }}
               />
-              <span>.</span>
             </h1>
-            <p style={{ fontSize: 13, color: "#555", lineHeight: 1.75, marginTop: "2rem" }}>
-              Our board of directors, legally bound to be under 30, govern the
-              foundation, with an associate board as the pipeline to future
-              directors. Our legacy board and each location's advisory board
-              over 30 opens doors and bridges generational expertise. Eight
-              global departments and a network of managing directors run day to
-              day operations, and our community members champion us in their own
-              communities.
-            </p>
           </FadeUp>
 
           {/* Right column, asymmetric photo mosaic */}
@@ -190,6 +174,7 @@ export default function AboutPage() {
             className="flex justify-around"
             style={{
               paddingTop: "2rem",
+              paddingBottom: "2rem",
               marginTop: "2rem",
               borderTop: "0.5px solid #e8e8e8",
             }}
@@ -213,6 +198,69 @@ export default function AboutPage() {
               <p style={{ fontSize: 22, fontWeight: 700, color: "#1A6B3C" }}>{count3}</p>
               <p style={{ fontSize: 11, color: "#888" }}>Locations worldwide</p>
             </div>
+          </div>
+        </FadeUp>
+
+        {/* How TRIIBE works */}
+        <FadeUp delay={0}>
+          <div
+            style={{
+              paddingTop: "3rem",
+              paddingBottom: "3rem",
+              borderTop: "0.5px solid #e8e8e8",
+            }}
+          >
+            <h2 style={{ fontSize: 28, fontWeight: 700, color: "#111", marginBottom: "2rem", display: "block" }}>
+              How TRIIBE works
+            </h2>
+            <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr",
+              gap: "2.5rem",
+              alignItems: "start",
+            }}
+          >
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+              <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
+                The TRIIBE Fellowship ensures founders don't burn out while transitioning from a 'youth' nonprofit to an established one.
+              </p>
+              <a
+                href="https://www.triibe.org/fellowship"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ background: "#1A6B3C", color: "white", fontSize: 13, fontWeight: 600, padding: "10px 20px", borderRadius: 8, border: "none", display: "inline-block", textDecoration: "none", marginTop: "auto" }}
+              >
+                TRIIBE Fellowship
+              </a>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+              <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
+                TRIIBE Talks highlight next-gen founders alongside established ones, because age doesn't determine the quality of a voice.
+              </p>
+              <a
+                href="https://www.triibe.org/talk"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ background: "#1A6B3C", color: "white", fontSize: 13, fontWeight: 600, padding: "10px 20px", borderRadius: 8, border: "none", display: "inline-block", textDecoration: "none", marginTop: "auto" }}
+              >
+                TRIIBE Talks
+              </a>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+              <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
+                The TRIIBE I00 is the definitive list of next-gen nonprofit founders under 30 to know.
+              </p>
+              <a
+                href="https://www.triibe.org/100"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ background: "#1A6B3C", color: "white", fontSize: 13, fontWeight: 600, padding: "10px 20px", borderRadius: 8, border: "none", display: "inline-block", textDecoration: "none", marginTop: "auto" }}
+              >
+                TRIIBE I00
+              </a>
+            </div>
+          </div>
           </div>
         </FadeUp>
       </div>
