@@ -138,7 +138,7 @@ export default function AboutPage() {
               className="font-extrabold text-[#111]"
               style={{ fontSize: 32, lineHeight: 1.25, letterSpacing: "-0.5px", marginBottom: 0 }}
             >
-              <span style={{ display: "block", fontWeight: 500 }}>
+              <span style={{ display: "block", fontWeight: 700, fontSize: 44 }}>
                 Everyone you see below is building
               </span>
               <img
@@ -223,7 +223,7 @@ export default function AboutPage() {
           >
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
               <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
-                The TRIIBE Fellowship ensures founders don't burn out while transitioning from a 'youth' nonprofit to an established one.
+                Our 3-year Fellowship ensures founders don't burn out while transitioning from a "youth" nonprofit to an established one.
               </p>
               <a
                 href="https://www.triibe.org/fellowship"
@@ -236,7 +236,7 @@ export default function AboutPage() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
               <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
-                TRIIBE Talks highlight next-gen founders alongside established ones, because age doesn't determine the quality of a voice.
+                TRIIBE Talks highlight next-gen nonprofit founders alongside peers over 30, because age doesn't determine the quality of a voice.
               </p>
               <a
                 href="https://www.triibe.org/talk"
@@ -249,7 +249,7 @@ export default function AboutPage() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
               <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
-                The TRIIBE I00 is the definitive list of next-gen nonprofit founders under 30 to know.
+                The TRIIBE I00 is the definitive global list of nonprofit founders under 30 to know.
               </p>
               <a
                 href="https://www.triibe.org/100"
@@ -281,7 +281,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {csuite.map((person, i) => (
               <FadeUp key={person.name} delay={i * 100}>
-                <PersonCard person={person} photoSize={96} />
+                <PersonCard person={person} photoSize={120} />
               </FadeUp>
             ))}
           </div>

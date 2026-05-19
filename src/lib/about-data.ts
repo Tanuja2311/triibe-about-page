@@ -49,12 +49,14 @@ export const associateBoard: Person[] = [
     imagePath: "/images/team/jade-kashemsant.jpg",
     linkedIn: "https://www.linkedin.com/in/jadekashemsant/",
   },
+  /* hidden:
   {
     name: "Dominic Yap",
     role: "Shadow Secretary",
     imagePath: "/images/team/dominic-yap.jpg",
     linkedIn: "https://www.linkedin.com/in/dominic-yap-62b546266/",
   },
+  */
   {
     name: "Christian Elam",
     role: "Member",
@@ -71,12 +73,14 @@ export const associateBoard: Person[] = [
     imagePath: "/images/team/george-shi.jpg",
     linkedIn: "https://www.linkedin.com/in/george-shi-4a9b18190/",
   },
+  /* hidden:
   {
     name: "Frederick Tsao",
     role: "Member",
     imagePath: "/images/team/frederick-tsao.jpg",
     linkedIn: "https://www.linkedin.com/in/frederick-mochizuki-tsao/",
   },
+  */
   {
     name: "Aria Mariam",
     role: "Member",
@@ -87,15 +91,21 @@ export const associateBoard: Person[] = [
     role: "Member",
     imagePath: "/images/team/maximilian-goetz.jpg",
   },
+  /* hidden:
   {
     name: "Aveneel Waadhwa",
     role: "Member",
     imagePath: "/images/team/aveneel-waadhwa.jpg",
     linkedIn: "https://www.linkedin.com/in/aveneel/",
   },
+  */
+  {
+    name: "Zachary Anglemyer",
+    role: "Member",
+    imagePath: "/images/team/zachary-anglemyer.jpg",
+  },
 ];
 
-// Filled members first, In Conversation below (can be sliced to remove later)
 export const legacyBoard: Person[] = [
   {
     name: "Stefan Avivson",
@@ -158,19 +168,16 @@ export const legacyBoard: Person[] = [
     title: "Founder, 5th Gen Leaders Community",
     imagePath: "/images/team/mark-sadovnick.jpg",
   },
-  // In Conversation, remove when finalised
-  {
-    name: "Laurence Kalinsky",
-    title: "CEO, PVBLIC.org",
-    imagePath: "/images/team/laurence-kalinsky.jpg",
-  },
   { name: "Lanz Pierce", title: "Media & Entertainment Executive", imagePath: "/images/team/lanz-pierce.jpg", linkedIn: "https://www.linkedin.com/in/lanzpierce/" },
   { name: "Mariela Dabbah", title: "Founder, Red Shoe Movement", imagePath: "/images/team/mariela-dabbah.jpg", linkedIn: "https://www.linkedin.com/in/marieladabbah/" },
+  /* hidden:
+  { name: "Laurence Kalinsky", title: "CEO, PVBLIC.org", imagePath: "/images/team/laurence-kalinsky.jpg" },
+  { name: "David Homan", title: "Founder, Orchestrated Connections", imagePath: "/images/team/david-homan.jpg", linkedIn: "https://www.linkedin.com/in/davidrhoman/" },
+  { name: "Sandra Fan", title: "Family Office Network Leader", imagePath: "/images/team/sandra-fan.jpg", linkedIn: "https://www.linkedin.com/in/sandrafan/" },
   { name: "Marc Dullaert", title: "Founder, KidsRights", imagePath: "/images/team/marc-dullaert.jpg" },
   { name: "Ed Martin", title: "Founder, 100 Billion Meals & Omniwin", imagePath: "/images/team/ed-martin.jpg" },
-  { name: "David Homan", title: "Founder, Orchestrated Connections", imagePath: "/images/team/david-homan.jpg", linkedIn: "https://www.linkedin.com/in/davidrhoman/" },
   { name: "Adeline Azrack", title: "Managing Director, Chanel Foundation Americas", imagePath: "/images/team/adeline-azrack.jpg", linkedIn: "https://www.linkedin.com/in/adeline-azrack-0853023/" },
-  { name: "Sandra Fan", title: "Family Office Network Leader", imagePath: "/images/team/sandra-fan.jpg", linkedIn: "https://www.linkedin.com/in/sandrafan/" },
+  */
 ];
 
 export const locations: LocationEntry[] = [
