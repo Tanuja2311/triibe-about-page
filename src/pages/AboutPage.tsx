@@ -160,9 +160,27 @@ export default function AboutPage() {
                 height: 340,
               }}
             >
-              <div style={{ borderRadius: 10, width: "100%", height: "100%", background: "#EAF3DE" }} />
-              <div style={{ borderRadius: 10, width: "100%", height: "100%", background: "#EAF3DE", gridColumn: 2, gridRow: "span 2" }} />
-              <div style={{ borderRadius: 10, width: "100%", height: "100%", background: "#EAF3DE" }} />
+              <div style={{ borderRadius: 10, overflow: "hidden", width: "100%", height: "100%" }}>
+                <img
+                  src="/images/about/about-photo-1.jpeg"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                  alt="TRIIBE team"
+                />
+              </div>
+              <div style={{ borderRadius: 10, overflow: "hidden", width: "100%", height: "100%", gridColumn: 2, gridRow: "span 2" }}>
+                <img
+                  src="/images/about/about-page-3.jpg"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                  alt="TRIIBE team"
+                />
+              </div>
+              <div style={{ borderRadius: 10, overflow: "hidden", width: "100%", height: "100%" }}>
+                <img
+                  src="/images/about/about-photo-2.png"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                  alt="TRIIBE team"
+                />
+              </div>
             </div>
           </FadeUp>
         </div>
@@ -319,8 +337,13 @@ export default function AboutPage() {
             />
           </FadeUp>
           <FadeUp delay={100}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-              {legacyBoard.map((person) => (
+            <div style={{ display: "flex", justifyContent: "center", gap: "3rem" }}>
+              {legacyBoard.slice(0, 2).map((person) => (
+                <LegacyMemberItem key={person.name} person={person} />
+              ))}
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "2rem", marginTop: "2rem" }}>
+              {legacyBoard.slice(2).map((person) => (
                 <LegacyMemberItem key={person.name} person={person} />
               ))}
             </div>
