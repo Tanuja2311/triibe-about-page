@@ -360,7 +360,7 @@ export default function AboutPage() {
               title="Locations"
               description="TRIIBE, like our name, is decentralized by design. Each location is led by a managing director, with a team and advisory board. Advisory Board members serve as regional ambassadors, connectors, and advisors, providing institutional credibility, senior-level counsel, and access to local networks that advance its mission."
             />
-            <span style={{ fontSize: 14, color: "#888", fontStyle: "italic", marginBottom: "2rem", display: "block" }}>
+            <span style={{ fontSize: 15, color: "#333", fontStyle: "normal", fontWeight: 500, marginBottom: "2rem", display: "block", maxWidth: 600 }}>
               Local advisors who open doors, build community, and drive fundraising on the ground.
             </span>
           </FadeUp>
