@@ -100,10 +100,10 @@ const ctaCards = [
 ];
 
 export default function AboutPage() {
-  const { count: count0, start: start0 } = useCountUp(8);
+  const { count: count0, start: start0 } = useCountUp(7);
   const { count: count1, start: start1 } = useCountUp(9);
   const { count: count2, start: start2 } = useCountUp(80);
-  const { count: count3, start: start3 } = useCountUp(9);
+  const { count: count3, start: start3 } = useCountUp(7);
 
   const statsRef = useRef<HTMLDivElement>(null);
   const [animated, setAnimated] = useState(false);
@@ -236,10 +236,10 @@ export default function AboutPage() {
               display: "grid",
               gridTemplateColumns: "1fr 1fr 1fr",
               gap: "2.5rem",
-              alignItems: "start",
+              alignItems: "stretch",
             }}
           >
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", height: "100%" }}>
               <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
                 Our 3-year Fellowship ensures founders don't burn out while transitioning from a "youth" nonprofit to an established one.
               </p>
@@ -252,7 +252,7 @@ export default function AboutPage() {
                 TRIIBE Fellowship
               </a>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", height: "100%" }}>
               <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
                 TRIIBE Talks highlight next-gen nonprofit founders alongside peers over 30, because age doesn't determine the quality of a voice.
               </p>
@@ -265,7 +265,7 @@ export default function AboutPage() {
                 TRIIBE Talks
               </a>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", height: "100%" }}>
               <p style={{ fontSize: 14, color: "#333", lineHeight: 1.7, marginBottom: 16 }}>
                 The TRIIBE I00 is the definitive global list of nonprofit founders under 30 to know.
               </p>
@@ -333,17 +333,17 @@ export default function AboutPage() {
           <FadeUp delay={0}>
             <SectionHeader
               title="Legacy Board"
-              description="Legacy Board members serve as ambassadors, connectors, and advisors, providing the Corporation with institutional credibility, senior-level counsel, and access to networks that advance its mission."
+              description="Legacy Board members serve as ambassadors, connectors, and advisors, providing institutional credibility, senior-level counsel, and access to networks that advance its mission."
             />
           </FadeUp>
           <FadeUp delay={100}>
-            <div style={{ display: "flex", justifyContent: "center", gap: "3rem" }}>
-              {legacyBoard.slice(0, 2).map((person) => (
-                <LegacyMemberItem key={person.name} person={person} />
-              ))}
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.5rem" }}>
+              <div style={{ width: "25%" }}>
+                <LegacyMemberItem person={legacyBoard[0]} />
+              </div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "2rem", marginTop: "2rem" }}>
-              {legacyBoard.slice(2).map((person) => (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.5rem" }}>
+              {legacyBoard.slice(1).map((person) => (
                 <LegacyMemberItem key={person.name} person={person} />
               ))}
             </div>
@@ -358,8 +358,11 @@ export default function AboutPage() {
           <FadeUp delay={0}>
             <SectionHeader
               title="Locations"
-              description="TRIIBE, like our name, is decentralized by design. Each location is led by a managing director building community on the ground."
+              description="TRIIBE, like our name, is decentralized by design. Each location is led by a managing director, with a team and advisory board. Advisory Board members serve as regional ambassadors, connectors, and advisors, providing institutional credibility, senior-level counsel, and access to local networks that advance its mission."
             />
+            <span style={{ fontSize: 14, color: "#888", fontStyle: "italic", marginBottom: "2rem", display: "block" }}>
+              Local advisors who open doors, build community, and drive fundraising on the ground.
+            </span>
           </FadeUp>
           <div className="space-y-4">
             {locations.map((loc, i) => (

@@ -26,6 +26,7 @@ export interface LocationAdvisoryMember {
   imagePath: string;
   linkedIn?: string;
   role?: string;
+  title?: string;
 }
 
 export interface LocationEntry {

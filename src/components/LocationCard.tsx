@@ -10,8 +10,8 @@ function AdvisoryChip({ member }: { member: LocationAdvisoryMember }) {
         flexDirection: "column",
         alignItems: "center",
         gap: 3,
-        minWidth: 80,
-        maxWidth: 100,
+        minWidth: 100,
+        maxWidth: 140,
       }}
     >
       <PersonAvatar src={member.imagePath} name={member.name} size={40} />
@@ -21,9 +21,7 @@ function AdvisoryChip({ member }: { member: LocationAdvisoryMember }) {
           color: "#111111",
           fontWeight: 500,
           textAlign: "center",
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
+          whiteSpace: "normal",
           width: "100%",
         }}
       >
@@ -39,6 +37,19 @@ function AdvisoryChip({ member }: { member: LocationAdvisoryMember }) {
           }}
         >
           {member.role}
+        </p>
+      )}
+      {member.title && (
+        <p
+          style={{
+            fontSize: 11,
+            color: "#888",
+            textAlign: "center",
+            marginTop: 2,
+            whiteSpace: "normal",
+          }}
+        >
+          {member.title}
         </p>
       )}
       <LinkedInBadge url={member.linkedIn} />

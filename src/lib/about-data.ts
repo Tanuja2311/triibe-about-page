@@ -33,21 +33,28 @@ export const csuite: Person[] = [
 
 export const associateBoard: Person[] = [
   {
-    name: "Maryam Rana",
-    role: "Associate Board Chair",
-    imagePath: "/images/team/maryam-rana.jpg",
+    name: "Jovan Nguyen Tran",
+    role: "Chair",
+    imagePath: "/images/team/jovan-nguyen-tran.jfif",
+    linkedIn: "https://www.linkedin.com/in/jovannguyentran/",
   },
   {
     name: "Laya Pothunuri",
-    role: "Associate Board Vice Chair",
+    role: "Vice Chair",
     imagePath: "/images/team/laya-pothunuri.jpg",
     linkedIn: "https://www.linkedin.com/in/laya-pothunuri-964878175/",
   },
   {
     name: "Jade Kashemsant",
-    role: "Shadow Treasurer",
+    role: "Treasurer",
     imagePath: "/images/team/jade-kashemsant.jpg",
     linkedIn: "https://www.linkedin.com/in/jadekashemsant/",
+  },
+  {
+    name: "Maryam Rana",
+    role: "Secretary",
+    imagePath: "/images/team/maryam-rana.jpg",
+    linkedIn: "https://www.linkedin.com/in/maryam-rana-0b21a728b/",
   },
   /* hidden:
   {
@@ -60,19 +67,23 @@ export const associateBoard: Person[] = [
   {
     name: "Christian Elam",
     role: "Member",
-    imagePath: "/images/team/christian-elam.jpg",
+    imagePath: "/images/team/christian-elam.jfif",
+    linkedIn: "https://www.linkedin.com/in/h-e-amb-christian-elam-4b0a471a8/",
   },
   {
     name: "Rida Karim",
     role: "Member",
     imagePath: "/images/team/rida-karim.jpg",
+    linkedIn: "https://www.linkedin.com/in/ridakarim/",
   },
+  /* hidden:
   {
     name: "George Shi",
     role: "Member",
     imagePath: "/images/team/george-shi.jpg",
     linkedIn: "https://www.linkedin.com/in/george-shi-4a9b18190/",
   },
+  */
   /* hidden:
   {
     name: "Frederick Tsao",
@@ -81,15 +92,18 @@ export const associateBoard: Person[] = [
     linkedIn: "https://www.linkedin.com/in/frederick-mochizuki-tsao/",
   },
   */
+  /* hidden:
   {
     name: "Aria Mariam",
     role: "Member",
     imagePath: "/images/team/aria-mariam.jpg",
   },
+  */
   {
     name: "Maximilian Goetz",
     role: "Member",
     imagePath: "/images/team/maximilian-goetz.jpg",
+    linkedIn: "https://www.linkedin.com/in/maxgoetz/",
   },
   /* hidden:
   {
@@ -102,7 +116,8 @@ export const associateBoard: Person[] = [
   {
     name: "Zachary Anglemyer",
     role: "Member",
-    imagePath: "/images/team/zachary-anglemyer.jpg",
+    imagePath: "/images/team/zachary-anglemyer.jfif",
+    linkedIn: "https://www.linkedin.com/in/zacharyanglemyer/",
   },
 ];
 
@@ -167,9 +182,18 @@ export const legacyBoard: Person[] = [
     name: "Mark Sadovnick",
     title: "Founder, 5th Gen Leaders Community",
     imagePath: "/images/team/mark-sadovnick.jpg",
+    linkedIn: "https://www.linkedin.com/in/marksadovnick/",
   },
+  /* hidden:
   { name: "Lanz Pierce", title: "Media & Entertainment Executive", imagePath: "/images/team/lanz-pierce.jpg", linkedIn: "https://www.linkedin.com/in/lanzpierce/" },
+  */
   { name: "Mariela Dabbah", title: "Founder, Red Shoe Movement", imagePath: "/images/team/mariela-dabbah.jpg", linkedIn: "https://www.linkedin.com/in/marieladabbah/" },
+  {
+    name: "Laurie Dhue",
+    title: "Managing Director, Family Office Resource Group. Past anchor for CNN, NBC, Fox, and PIX11",
+    imagePath: "/images/team/laurie-dhue.jfif",
+    linkedIn: "https://www.linkedin.com/in/laurie-dhue-705a7326/",
+  },
   /* hidden:
   { name: "Laurence Kalinsky", title: "CEO, PVBLIC.org", imagePath: "/images/team/laurence-kalinsky.jpg" },
   { name: "David Homan", title: "Founder, Orchestrated Connections", imagePath: "/images/team/david-homan.jpg", linkedIn: "https://www.linkedin.com/in/davidrhoman/" },
@@ -188,13 +212,18 @@ export const locations: LocationEntry[] = [
     mdImagePath: "/images/team/kyle-matthys.jpg",
     mdLinkedIn: "https://www.linkedin.com/in/kylematthys/",
     advisoryBoard: [
+      /* hidden:
       { name: "Helen Kramer", imagePath: "/images/team/helen-kramer.jpg", role: "Chair" },
       { name: "Jonny Imerman", imagePath: "/images/team/jonny-imerman.jpg", linkedIn: "https://www.linkedin.com/in/imermanangels/", role: "Vice Chair" },
-      { name: "Jen Libby", imagePath: "/images/team/jen-libby.jpg", linkedIn: "https://www.linkedin.com/in/jen-libby-changemaker/" },
       { name: "Marcia Nelson", imagePath: "/images/team/marcia-nelson.jpg", linkedIn: "https://www.linkedin.com/in/marciasnelson/" },
-      { name: "Wendy Diamond", imagePath: "/images/team/wendy-diamond.jpg", linkedIn: "https://www.linkedin.com/in/wendydiamond/" },
-      { name: "Yvonne Beri", imagePath: "/images/team/yvonne-beri.jpg", linkedIn: "https://www.linkedin.com/in/yvonneberi/" },
       { name: "Mariam Azarm", imagePath: "/images/team/mariam-azarm.jpg" },
+      */
+      { name: "Jen Libby", imagePath: "/images/team/jen-libby.jpg", linkedIn: "https://www.linkedin.com/in/jen-libby-changemaker/", title: "Founder & CEO, Promly" },
+      { name: "Wendy Diamond", imagePath: "/images/team/wendy-diamond.jpg", linkedIn: "https://www.linkedin.com/in/wendydiamond/", title: "Founder, WEDO" },
+      { name: "Yvonne Beri", imagePath: "/images/team/yvonne-beri.jpg", linkedIn: "https://www.linkedin.com/in/yvonneberi/", title: "Advisor, Private Family Offices" },
+      { name: "Manuela Welton", imagePath: "/images/team/manuela-welton.jfif", linkedIn: "https://www.linkedin.com/in/manuelawelton/", title: "Consultant, Organizational and Individual Facilitation" },
+      { name: "Megahan Peterson", imagePath: "/images/team/megahan-peterson.jfif", linkedIn: "https://www.linkedin.com/in/megahan-peterson-3b6b5012/", title: "CIO, Family Offices Global" },
+      { name: "Cassandra Seidenfeld", imagePath: "/images/team/cassandra-seidenfeld.jfif", linkedIn: "https://www.linkedin.com/in/cassandra-seidenfeld-01b88452/", title: "Professional Actor" },
     ],
     advisoryBoardForming: false,
   },
@@ -204,12 +233,14 @@ export const locations: LocationEntry[] = [
     mdName: "Maryam Rana",
     mdImagePath: "/images/team/maryam-rana.jpg",
     advisoryBoard: [
+      /* hidden:
       { name: "Adam Management CIO", imagePath: "/images/team/adam-management-cio.jpg", role: "Chair" },
-      { name: "Stuart Smith", imagePath: "/images/team/stuart-smith.jpg", role: "Vice Chair" },
       { name: "Brian Willetts", imagePath: "/images/team/brian-willetts.jpg" },
       { name: "Sarah Darwin", imagePath: "/images/team/sarah-darwin.jpg" },
-      { name: "Anthony Sandoval", imagePath: "/images/team/anthony-sandoval.jpg" },
-      { name: "Freddie Toye", imagePath: "/images/team/freddie-toye.jpg" },
+      */
+      { name: "Frederick Toye", imagePath: "/images/team/frederick-toye.jfif", linkedIn: "https://www.linkedin.com/in/frederick-toye-48ab2648/", title: "Director, Toye & Co" },
+      { name: "Stuart Smith", imagePath: "/images/team/stuart-smith.jfif", linkedIn: "https://www.linkedin.com/in/stuart-smith-00380211/", title: "CEO, NCUK - University Consortium" },
+      { name: "Anthony Sandoval", imagePath: "/images/team/anthony-sandoval.jfif", linkedIn: "https://www.linkedin.com/in/anthony-h-sandoval/", title: "Principal, VesperStone Capital" },
     ],
     advisoryBoardForming: false,
   },
@@ -229,9 +260,11 @@ export const locations: LocationEntry[] = [
     mdImagePath: "/images/team/laya-pothunuri.jpg",
     mdLinkedIn: "https://www.linkedin.com/in/laya-pothunuri-964878175/",
     advisoryBoard: [
-      { name: "Paul Brook", imagePath: "/images/team/paul-brook.jpg", role: "Chair" },
+      /* hidden:
       { name: "Wen Chiu", imagePath: "/images/team/wen-chiu.jpg" },
-      { name: "Christine Amour-Levan", imagePath: "/images/team/christine-amour-levan.jpg" },
+      */
+      { name: "Paul Brook", imagePath: "/images/team/paul-brook.jfif", linkedIn: "https://www.linkedin.com/in/paul-brook-13ab64258/", title: "CEO, Deep Green Capital" },
+      { name: "Christine Amour-Levan", imagePath: "/images/team/christine-amour-levan.jfif", linkedIn: "https://www.linkedin.com/in/christine-amour-levar007/", title: "Co-Founder, Investors For Climate" },
     ],
     advisoryBoardForming: false,
   },
@@ -262,6 +295,7 @@ export const locations: LocationEntry[] = [
     advisoryBoard: [],
     advisoryBoardForming: true,
   },
+  /* hidden:
   {
     location: "Canada",
     flag: "🇨🇦",
@@ -271,6 +305,7 @@ export const locations: LocationEntry[] = [
     advisoryBoard: [],
     advisoryBoardForming: true,
   },
+  */
   {
     location: "Jamaica",
     flag: "🇯🇲",
@@ -312,12 +347,18 @@ export const departments: Department[] = [
       },
       {
         name: "Everett Mader",
-        imagePath: "/images/team/everett-mader.jpg",
+        imagePath: "/images/team/everett-mader.jfif",
+        linkedIn: "https://www.linkedin.com/in/everettmader/",
       },
       {
         name: "Evelyn Sar",
         imagePath: "/images/team/evelyn-sar.jpg",
         linkedIn: "https://www.linkedin.com/in/evelynsar/",
+      },
+      {
+        name: "Zachary Anglemyer",
+        imagePath: "/images/team/zachary-anglemyer.jfif",
+        linkedIn: "https://www.linkedin.com/in/zacharyanglemyer/",
       },
     ],
   },
@@ -358,20 +399,25 @@ export const departments: Department[] = [
         imagePath: "/images/team/shradha-adhikari.jpg",
         linkedIn: "https://www.linkedin.com/in/shradhadhikari/",
       },
+      /* hidden:
       {
         name: "Jade Kashemsant",
         imagePath: "/images/team/jade-kashemsant.jpg",
         linkedIn: "https://www.linkedin.com/in/jadekashemsant/",
       },
+      */
       {
         name: "Satyam Pandey",
         imagePath: "/images/team/satyam-pandey.jpg",
         linkedIn: "https://www.linkedin.com/in/satyyampandey/",
       },
+      /* hidden:
       {
         name: "Rida Karim",
         imagePath: "/images/team/rida-karim.jpg",
+        linkedIn: "https://www.linkedin.com/in/ridakarim/",
       },
+      */
     ],
   },
   {
@@ -389,6 +435,11 @@ export const departments: Department[] = [
         imagePath: "/images/team/taylor-anderson.jpg",
         linkedIn: "https://www.linkedin.com/in/taylor-anderson-74a577396/",
       },
+      {
+        name: "Rida Karim",
+        imagePath: "/images/team/rida-karim.jpg",
+        linkedIn: "https://www.linkedin.com/in/ridakarim/",
+      },
     ],
   },
   {
@@ -404,6 +455,7 @@ export const departments: Department[] = [
       {
         name: "Maryam Rana",
         imagePath: "/images/team/maryam-rana.jpg",
+        linkedIn: "https://www.linkedin.com/in/maryam-rana-0b21a728b/",
       },
       {
         name: "Imane Abdel Jelil",
@@ -425,10 +477,12 @@ export const departments: Department[] = [
       {
         name: "Aditya Patnaik",
         imagePath: "/images/team/aditya-patnaik.jpg",
+        linkedIn: "https://www.linkedin.com/in/aditya-patnaik-bb695b213/",
       },
       {
         name: "Riya Bose",
-        imagePath: "/images/team/riya-bose.jpg",
+        imagePath: "/images/team/riya-bose.jfif",
+        linkedIn: "https://www.linkedin.com/in/riya-bose-781699273/",
       },
     ],
   },
@@ -573,7 +627,14 @@ export const honoraryMembers: HonoraryMember[] = [
     linkedIn: "https://www.linkedin.com/in/mahirlaul/",
   },
   {
-    name: "Zachary Anglemyer",
-    imagePath: "/images/team/zachary-anglemyer.jpg",
+    name: "Aria Mariam",
+    imagePath: "/images/team/aria-mariam.png",
   },
+  /* hidden:
+  {
+    name: "Zachary Anglemyer",
+    imagePath: "/images/team/zachary-anglemyer.jfif",
+    linkedIn: "https://www.linkedin.com/in/zacharyanglemyer/",
+  },
+  */
 ];
