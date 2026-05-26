@@ -15,6 +15,7 @@ import LegacyMemberItem from "../components/LegacyMemberItem";
 import LocationCard from "../components/LocationCard";
 import DepartmentRow from "../components/DepartmentRow";
 import HonoraryItem from "../components/HonoraryItem";
+import OrgChart from "../components/OrgChart";
 
 function PhotoSlot({
   src,
@@ -282,6 +283,9 @@ export default function AboutPage() {
           </div>
         </FadeUp>
       </div>
+
+      {/* ── Org Chart ────────────────────────────────────────────── */}
+      <OrgChart />
 
       {/* ── Sticky Table of Contents ──────────────────────────────── */}
       <FadeUp delay={0}>

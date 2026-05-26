@@ -35,7 +35,9 @@
       "PowerShell(Get-ChildItem D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\team\\\\ | Where-Object { $_.Name -match \"manuela|megahan|cassandra|freddie|frederick\" } | Select-Object Name)",
       "PowerShell(Get-ChildItem D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\team\\\\ | Where-Object { $_.Name -match \"manuela|megahan|cassandra|freddie|wendy|yvonne|paul-brook|christine|jen-libby\" } | Select-Object Name)",
       "PowerShell(Get-ChildItem D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\team\\\\ | Where-Object { $_.Name -match \"freddie|toye|paul|brook|christine|stuart|anthony-s|cassandra|megahan|manuela\" } | Select-Object Name)",
-      "PowerShell(Get-ChildItem D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\team\\\\ | Where-Object { $_.Name -match \"stuart|anthony|sandoval\" } | Select-Object Name)"
+      "PowerShell(Get-ChildItem D:\\\\Triibe\\\\About-Us-Page\\\\public\\\\images\\\\team\\\\ | Where-Object { $_.Name -match \"stuart|anthony|sandoval\" } | Select-Object Name)",
+      "Bash(npx --yes playwright install chromium --with-deps)",
+      "Bash(node -e ' *)"
     ]
   }
 }
